@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio project</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sas:ital, wght@0,100;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:wght@700;800;900&display=swap">
+    <link rel="stylesheet" href="../static/styles/main.css">
+</head>
+<body>z
+    <div class="hero">
+        <nav>
+            <h2 class="logo">PIT<span class="logop">STOP</span></h2>
+            <ul>
+                <li><a href={{url_for("home")}}>Home</a></li>
+                <li><a href={{ url_for("login") }}>Login</a></li>
+                <li><a href={{ url_for("register") }}>Register</a></li>
+            </ul>
+            <button class="button-subscribe" type="button">Contact</button>
+        </nav>
+    </div>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+    <script src="../static/scripts/rotate.js"></script>
+</body>
+</html>
