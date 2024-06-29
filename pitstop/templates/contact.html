@@ -6,12 +6,20 @@
         <fieldset class="from-group">
             <legend class="order-form-legend">Start Order</legend>
             <div class="form-group">
+                {{ form.name.label() }}
+                {{ form.name() }}
+            </div>
+            <div class="form-group">
                 {{ form.email.label() }}
                 {{ form.email() }}
             </div>
             <div class="form-group">
-                {{ form.password.label() }}
-                {{ form.password() }}
+                {{ form.subject.label() }}
+                {{ form.subject() }}
+            </div>
+            <div class="form-group">
+                {{ form.subject.label() }}
+                {{ form.subject() }}
             </div>
             {{ form.submit() }}
         </fieldset>

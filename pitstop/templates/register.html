@@ -1,1 +1,28 @@
 {% extends "layout.html" %}
+{% block content %}
+<div class="order-form-logged-out">
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <fieldset class="from-group">
+            <legend class="order-form-legend">Start Order</legend>
+            <div class="form-group">
+                {{ form.name.label() }}
+                {{ form.name() }}
+            </div>
+            <div class="form-group">
+                {{ form.email.label() }}
+                {{ form.email() }}
+            </div>
+            <div class="form-group">
+                {{ form.password.label() }}
+                {{ form.password() }}
+            </div>
+            <div class="form-group">
+                {{ form.confirm_password.label() }}
+                {{ form.confirm_password() }}
+            </div>
+            {{ form.submit() }}
+        </fieldset>
+    </form>
+</div>
+{% endblock content %}

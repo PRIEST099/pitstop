@@ -1,24 +1,40 @@
 from pitstop import app
+from pitstop.client.forms.forms import OrderForm, LoginForm, RegisterForm, ContactForm
 from flask import render_template
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def home():
-    return render_template('homepage.html')
+    form = OrderForm()
+    return render_template('homepage.html', title='Welcome - Pitstop', form=form)
 
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
 def login():
-    return render_template('login.html')
+    form = LoginForm()
+    return render_template('login.html', title='Log in - Pitstop', form=form)
 
-@app.route('/register')
+@app.route('/register', methods=['GET', 'POST'])
 def register():
-    return render_template('register.html')
+    form = RegisterForm()
+    return render_template('register.html', title='Join the Community', form=form)
+
+@app.route('/support')
+def contact():
+    form = ContactForm()
+    return render_template('contact.html', title='Support - Pitstop', form=form)
 
 
-@app.route('/test')
-def test_code():
-    return render_template('test.html')
 
+
+
+# custom Error hadlers
+@app.errorhandler(404)
+def ErrorHandler(error):
+    return '<h1>HEY! THIS DESTINATION DOES NOT EXIST</h1>', 404
+
+@app.errorhandler(500)
+def internal_server_error(error):
+  return render_template('<h1>HEY! SOMETHING HAPPENED ON MY END, PLEASE TRY AGAIN</h1>'), 500
 
 if __name__ == '__main__':
     app.run(debug=True)

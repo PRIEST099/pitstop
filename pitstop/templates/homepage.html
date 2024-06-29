@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<!DOCTYPE html>
 {% extends "layout.html" %}
 {% block content %}
     <div class="homepage_description">
@@ -10,6 +8,44 @@
             to our most humble garages.
             We are just one click away
         </p>
+    </div>
+    <div class="order-form-logged-out">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="from-group">
+                <legend class="order-form-legend">Start Order</legend>
+                <div class="form-group">
+                    {{ form.car_brand.label() }}
+                    {{ form.car_brand() }}
+                </div>
+                <div class="form-group">
+                    {{ form.car_model.label() }}
+                    {{ form.car_model() }}
+                </div>
+                <div class="form-group">
+                    {{ form.vehicle_year.label() }}
+                    {{ form.vehicle_year() }}
+                </div>
+                <div class="form-group">
+                    {{ form.license_plate.label() }}
+                    {{ form.license_plate() }}
+                </div>
+                <div class="form-group">
+                    {{ form.service_type.label() }}
+                    {{ form.service_type() }}
+                </div>
+                <div class="form-group">
+                    {{ form.preferred_date.label() }}
+                    {{ form.preferred_date() }}
+                </div>
+                <div class="form-group">
+                    {{ form.preferred_time.label() }}
+                    {{ form.preferred_time() }}
+                </div>
+                {{ form.submit.label() }}
+                {{ form.submit() }}
+            </fieldset>
+        </form>
     </div>
     
 {% endblock content %}
