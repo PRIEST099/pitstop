@@ -16,6 +16,9 @@ class User(db.Model):
     vehicle_info = db.relationship('Vehicle', backref='owner', lazy=True)
     booking = db.relationship('Booking', backref='user', lazy=True)
 
+    def __repr__(self) -> str:
+        return super().__repr__()
+
 
 
 # Vehicle table

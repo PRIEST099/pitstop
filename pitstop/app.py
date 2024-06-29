@@ -1,7 +1,8 @@
-from pitstop import app
+from pitstop import app, db
+from flask import jsonify
+from pitstop.admin.models import User
 from pitstop.client.forms.forms import OrderForm, LoginForm, RegisterForm, ContactForm
 from flask import render_template
-
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
@@ -23,18 +24,18 @@ def contact():
     form = ContactForm()
     return render_template('contact.html', title='Support - Pitstop', form=form)
 
-
-
-
-
-# custom Error hadlers
+# Custom Error Handlers
 @app.errorhandler(404)
 def ErrorHandler(error):
-    return '<h1>HEY! THIS DESTINATION DOES NOT EXIST</h1>', 404
+    '''to be completed later'''
+
+    return jsonify({None: 'None'}), 404
 
 @app.errorhandler(500)
 def internal_server_error(error):
-  return render_template('<h1>HEY! SOMETHING HAPPENED ON MY END, PLEASE TRY AGAIN</h1>'), 500
+    '''to be completed later'''
+
+    return jsonify({None: 'None'}), 500
 
 if __name__ == '__main__':
     app.run(debug=True)
