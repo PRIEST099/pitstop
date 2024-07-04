@@ -1,20 +1,63 @@
-{% extends "layout.html" %}
-{% block content %}
-<div class="order-form-logged-out">
-    <form method="POST" action="">
-        {{ form.hidden_tag() }}
-        <fieldset class="from-group">
-            <legend class="order-form-legend">Start Order</legend>
-            <div class="form-group">
-                {{ form.email.label() }}
-                {{ form.email() }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/register.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sas:ital, wght@0,100;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:wght@700;800;900&display=swap">
+    <title>{{title}}</title>
+</head>
+<body>
+    <div class="content">
+        <nav class="hero">
+            <h3 class="logo">PIT<span class="logo-design">STOP</span></h3>
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Support</li>
+            </ul>
+            <button class="nav-cto">Log in</button>
+        </nav>
+        <div class="form-content">
+            <div class="form-cto">
+                <p>Join the Community</p>
+                <a href="{{ url_for('home_testing') }}">Sign up</a>
             </div>
-            <div class="form-group">
-                {{ form.password.label() }}
-                {{ form.password() }}
+            <div class="form-register">
+                <div class="form-group">
+                    <div class="input-box">
+                        <input type="text" name="first_name" id="first_name" required style="text-transform: capitalize;">
+                        <span>First Name</span>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" name="username" id="username" required>
+                        <span>Username</span>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" name="password" id="password" required>
+                        <span>Password</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-box">
+                        <input type="text" name="last_name" id="last_name" required style="text-transform: uppercase;">
+                        <span>Last Name</span>
+                    </div>
+                    <div class="input-box">
+                        <input type="email" name="email" id="email" required>
+                        <span>Email</span>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" name="confirm_password" id="confirm_password" required>
+                        <span>Confirm Password</span>
+                    </div>
+                    
+                </div>
             </div>
-            {{ form.submit() }}
-        </fieldset>
-    </form>
-</div>
-{% endblock content %}
+            <button class="button-register">Register</button>
+        </div>
+
+        
+    </div>
+</body>
+</html>

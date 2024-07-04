@@ -1,0 +1,136 @@
+body {
+    margin: 0;
+    background-image: url(../images/background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: -1;
+}
+
+.content {
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-right: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+}
+
+.hero h3 {
+    color: white;
+    font-size: 20px;
+}
+
+.hero h3 span {
+    color: #006FFF;
+}
+
+.hero ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.hero li {
+    color: white;
+    justify-content: space-between;
+    padding: 0 15px;
+}
+
+.nav-cto {
+    background-color: #006FFF;
+    align-items: center;
+    text-align: center;
+    border-radius: 30px;
+    padding: 10px 20px;
+    border-style: none;
+    color: white;
+    transition: transform .2s ease-in-out;
+}
+.nav-cto:hover {
+    transform: scale(1.1);
+}
+
+.content .heading-1{
+    color: white;
+    margin-top: 50px;
+    font-size: 40px;
+    align-items: center;
+    font-weight: bolder;
+    text-align: center;
+}
+.content .heading-2 {
+    color: white;
+    align-items: center;
+    font-weight: bolder;
+    margin-top: -10px;
+    font-size: 40px;
+    text-align: center;
+}
+
+.center-text {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+    margin-top: 20px;
+    padding: 0 20%;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.cto-content {
+    background-color: #006FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 30px;
+    padding: 17px 20px;
+    margin: 0 auto;
+    border-style: none;
+    color: white;
+    margin-top: 100px;
+    animation: call-to-action 2s infinite;
+}
+a {
+    text-decoration: none;
+}
+
+
+@keyframes call-to-action {
+    0% {
+        transform: translateY(0); /* Start at the original position */
+    }
+    45% {
+        transform: translateY(-20px); /* Move up */
+    }
+    55% {
+        transform: translateY(-20px); /* Stay up for a moment */
+    }
+    90% {
+        transform: translateY(0); /* Return to the original position */
+    }
+}
+
+

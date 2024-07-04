@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    background-color: #171918;
+    color: white;
+}
+
+.body-content {
+    padding: 10px;
+    flex-grow: 1;
+    margin-left: 20%;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 20%;
+    background: rgba(14, 17, 47, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 0 5px 5px 0;
+}
+
+.sidebar header {
+    position: relative;
+}
+
+header .header-image {
+    display: flex;
+    justify-content: start;
+    padding: 40px 20px;
+    align-items: center;
+    gap: 20px;
+}
+
+header .header-image div {
+    width: 50px;
+    height: 50px;
+    background-color: #006FFF;
+    border: none;
+    border-radius: 50px;
+}
+
+header .header-image p {
+    font-weight: bold;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: -40px;
+}
+
+.sidebar ul li {
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: lighter;
+    transition: transform 0.4s ease;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.sidebar ul li:hover {
+    background-color: #006FFF;
+    color: white;
+    font-weight: bold;
+    transform: scaleY(1.1);
+}
+
+/* user dashboard */
+.user-dash {
+    padding: 20px;
+}
+
+.button-center {
+    display: block;
+    width: fit-content;
+    text-decoration: none;
+    padding: 15px 20px;
+    background-color: #006FFF;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 0 auto;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}

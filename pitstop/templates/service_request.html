@@ -1,0 +1,68 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="form-content">
+    <div class="form-register">
+        <div class="form-group">
+            <h4 style="margin: 40px 0;">USER INFORMATION</h4>
+            <div class="input-box">
+                <input type="text" name="first_name" id="first_name" required style="text-transform: capitalize;">
+                <span>First name</span>
+            </div>
+            <div class="input-box">
+                <input type="text" name="lask_name" id="last_name" required style="text-transform: uppercase;">
+                <span>Last name</span>
+            </div>
+            <div class="input-box">
+                
+                <input type="email" name="email" id="email" required>
+                <span>Email Address</span>
+            </div>
+            <div class="input-box">
+                <input type="tel" name="phone" id="phone" required>
+                <span>Phone</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <h4 style="margin: 40px 0;">VEHICLE INFORMATION</h4>
+            <div class="input-box">
+                <input type="text" name="vehicle_make" id="vehicle_make" required style="text-transform: uppercase;">
+                <span>Vehicle make</span>
+            </div>
+            <div class="input-box">
+                <input type="text" name="vehicle_model" id="vehicle_model" required>
+                <span>Vehicle model</span>
+            </div>
+            <div class="input-box">
+                <input type="text" name="vehicle_year" id="vehicle_year" required>
+                <span>Vehicle year</span>
+            </div>
+            <div class="input-box">
+                <input type="text" name="license_plate" id="license_plate" required>
+                <span>License plate</span>
+            </div>
+            
+        </div>
+        <div class="form-group">
+            <h4 style="margin: 40px 0;">SERVICE INFORMATION</h4>
+            <div class="input-box">
+                <input type="text" name="service_type" id="service_type" required style="text-transform: uppercase;">
+                <span>Service type</span>
+            </div>
+            <div class="input-box">
+                <input type="text" name="service_description" id="service_description" required>
+                <span>Description</span>
+            </div>
+            <div class="input-box">
+                <input type="text" name="service_date" id="service_date" required>
+                <span>Date and time</span>
+            </div>
+            <div class="input-box">
+                <input type="text" name="additional_note" id="additional_note" required>
+                <span>additional notes</span>
+            </div>
+            
+        </div>
+    </div>
+    <button onclick="window.location.href='{{url_for('home_testing')}}'" class="button-register" style="border-radius: 10px;">Request</button>
+</div>
+{% endblock content %}

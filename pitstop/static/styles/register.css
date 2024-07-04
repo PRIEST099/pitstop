@@ -1,0 +1,168 @@
+body {
+    margin: 0;
+    background-image: url(../images/background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+
+.content {
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-right: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+}
+
+.hero h3 {
+    color: white;
+    font-size: 20px;
+}
+
+.hero h3 span {
+    color: #006FFF;
+}
+
+.hero ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.hero li {
+    color: white;
+    justify-content: space-between;
+    padding: 0 15px;
+}
+
+.nav-cto {
+    background-color: #006FFF;
+    align-items: center;
+    text-align: center;
+    border-radius: 30px;
+    padding: 10px 20px;
+    border-style: none;
+    color: white;
+    transition: transform .2s ease-in-out;
+}
+.nav-cto:hover {
+    transform: scale(1.1);
+}
+
+.form-cto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+}
+
+.form-cto  p {
+    font-size: 25px;
+    font-weight: normal;
+}
+
+.form-cto a {
+    color: #006FFF;
+    text-decoration: none;
+}
+
+.form-content {
+    color: white;
+    width: fit-content;
+    margin: 0 auto;
+    background: rgba(14, 17, 47, 0.5);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    border-radius: 10px;
+    margin-top: 80px;
+}
+
+.form-register {
+    width: 100%; /* Adjust width as needed */
+    margin: 0 auto; /* Center horizontally */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 50px 50px 50px;
+    box-sizing: border-box;
+}
+
+.form-group {
+    margin: 10px;
+    padding: 0 10px;
+}
+
+.input-box {
+    position: relative;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    outline: none;
+    z-index: 1;
+}
+
+.input-box input:focus {
+    border-bottom: 1px solid #006FFF;
+    color: white;
+}
+
+.input-box span {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    color: #aaa;
+    transition: top .3s ease, color .3s ease;
+    z-index: 0;
+}
+
+.input-box input:focus ~ span,
+.input-box input:valid ~ span {
+    top: -10px;
+    font-size: 12px;
+    color: #006FFF;
+}
+
+.button-register {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #006FFF;
+    border-radius: 30px;
+    border: none;
+    padding: 10px 40px;
+    font-weight: normal;
+    color: white;
+    font-size: 20px;
+}
