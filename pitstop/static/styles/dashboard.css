@@ -12,12 +12,34 @@ body {
     height: 100vh;
     background-color: #171918;
     color: white;
+    overflow: auto;
+}
+
+
+
+body::-webkit-scrollbar {
+    width: 4px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: black;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #1d7fff14;
+    border-radius: 2px;
+    border: none;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: #003273;
 }
 
 .body-content {
     padding: 10px;
     flex-grow: 1;
     margin-left: 20%;
+    height: 100vh;
 }
 
 .sidebar {
@@ -30,6 +52,7 @@ body {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: 0 5px 5px 0;
+    overflow-y: auto;
 }
 
 .sidebar header {
@@ -84,19 +107,4 @@ header .header-image p {
 /* user dashboard */
 .user-dash {
     padding: 20px;
-}
-
-.button-center {
-    display: block;
-    width: fit-content;
-    text-decoration: none;
-    padding: 15px 20px;
-    background-color: #006FFF;
-    color: white;
-    font-weight: bold;
-    border-radius: 5px;
-    margin: 0 auto;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
 }

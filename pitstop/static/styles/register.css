@@ -7,24 +7,26 @@ body {
     background-attachment: fixed;
     position: relative;
     min-height: 100vh;
-    overflow: hidden;
 }
 
 body::before {
     content: "";
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
     z-index: -1;
 }
-
+.logo-auth {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
 .content {
-    padding-left: 30px;
-    padding-top: 10px;
-    padding-right: 30px;
+    position: relative;
+    height: 100vh;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -92,11 +94,28 @@ body::before {
     color: white;
     width: fit-content;
     margin: 0 auto;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
     background: rgba(14, 17, 47, 0.5);
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
+}
+
+.form-content-auth {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    width: fit-content;
+    margin: 0 auto;
     border-radius: 10px;
-    margin-top: 80px;
+    padding: 20px;
+    margin-top: 20px;
+    background: rgba(14, 17, 47, 0.5);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
 }
 
 .form-register {
@@ -105,7 +124,7 @@ body::before {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding:0 50px 50px 50px;
+    padding:0 50px 0px 50px;
     box-sizing: border-box;
 }
 
@@ -153,16 +172,22 @@ body::before {
     color: #006FFF;
 }
 
-.button-register {
-    margin: 0 auto;
+.form-submit {
     display: flex;
+    margin: 0 auto;
     justify-content: center;
     align-items: center;
     background-color: #006FFF;
-    border-radius: 30px;
+    border-radius: 5px;
     border: none;
-    padding: 10px 40px;
+    padding: 10px 20px;
     font-weight: normal;
     color: white;
     font-size: 20px;
 }
+
+.form-submit a {
+    text-decoration: none;
+    color: white;
+}
+

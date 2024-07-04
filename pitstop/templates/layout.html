@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/styles/dashboard.css">
+    <link rel="stylesheet" href="../static/styles/design.css">
+    <link rel="stylesheet" href="../static/styles/service.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/register.css') }}">
     <title>{{title}}</title>
 </head>
@@ -17,10 +19,10 @@
             <br class="breakline">
         </header>
         <ul>
-            <li><a href="{{url_for('home_testing')}}">Dashboard</a></li>
+            <li><a href="{{url_for('routes.dashboard')}}">Dashboard</a></li>
             <li><a href="#">Profile</a></li>
-            <li><a href="{{url_for('vehicles')}}">Vehicles</a></li>
-            <li><a href="{{url_for('services')}}">Current services</a></li>
+            <li><a href="{{url_for('routes.vehicles')}}">Vehicles</a></li>
+            <li><a href="{{url_for('routes.services')}}">Current services</a></li>
             <li><a href="#">Mechanics</a></li>
         </ul>
     </nav>

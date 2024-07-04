@@ -1,0 +1,59 @@
+
+.list-content{
+    color: white;
+    width: 100%;
+    border-radius: 10px;
+    padding: 20px;
+    
+}
+
+.blur {
+    background: rgba(14, 17, 47, 0.5);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    transition: all 0.5s ease;
+}
+
+.blur:hover {
+    background: rgba(78, 85, 168, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+
+/*================= vehicles list =================*/
+
+.row-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list-content .list-group .list-item {
+    padding: 10px 0;
+}
+
+.space-between {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.button-general {
+    padding: 5px 10px;
+    background-color: #006FFF;
+    border: none;
+    border-radius: 5px;
+}
+
+.button-general a {
+    text-decoration: none;
+    color: white;
+}
+.quick-links {
+    padding: 20px 0;
+}
+.quick-links a{
+    text-decoration: none;
+    color: white;
+}

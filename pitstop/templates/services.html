@@ -1,5 +1,20 @@
 {% extends 'layout.html' %}
-{% block content %}
-    <h1>current services</h1>
-{% endblock content %}
 
+{% block content %}
+    <div class="content">
+        <h2>Your Current Services</h2>
+        <div class="services-list">
+            {% for service in services %}
+                <div class="service-card blur">
+                    <h3>{{ service.type }}</h3>
+                    <p><strong>Service ID:</strong> {{ service.id }}</p>
+                    <p><strong>Description:</strong> {{ service.description }}</p>
+                    <p><strong>Requested On:</strong> {{ service.date_requested }}</p>
+                    <p><strong>Estimated Completion:</strong> {{ service.estimated_completion }}</p>
+                    <p><strong>Status:</strong> {{ service.status }}</p>
+                    <p><strong>Assigned Mechanic:</strong> {{ service.mechanic }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

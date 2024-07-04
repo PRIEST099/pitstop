@@ -14,41 +14,41 @@
         </nav>
         <div class="form-content-auth">
             <div class="form-cto">
-                <p>Join the Community</p>
-                <a href="{{ url_for('routes.login') }}">already have an account?</a>
+                <p>Manage new vehicle</p>
+                <a href="{{ url_for('rotues.vehicles') }}">Cancel</a>
             </div>
             <div class="form-register">
                 <div class="form-group">
                     <div class="input-box">
                         <input type="text" name="first_name" id="first_name" required style="text-transform: capitalize;">
-                        <span>First Name</span>
+                        <span>Vehicle Brand</span>
                     </div>
                     <div class="input-box">
                         <input type="text" name="username" id="username" required>
-                        <span>Username</span>
+                        <span>Vehicle Model</span>
                     </div>
                     <div class="input-box">
                         <input type="password" name="password" id="password" required>
-                        <span>Password</span>
+                        <span>License Plate</span>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="input-box">
                         <input type="text" name="last_name" id="last_name" required style="text-transform: uppercase;">
-                        <span>Last Name</span>
+                        <span>Automatic/Manual/Hybrid</span>
                     </div>
                     <div class="input-box">
                         <input type="email" name="email" id="email" required>
-                        <span>Email</span>
+                        <span>Year</span>
                     </div>
                     <div class="input-box">
                         <input type="password" name="confirm_password" id="confirm_password" required>
-                        <span>Confirm Password</span>
+                        <span>Color</span>
                     </div>
                     
                 </div>
             </div>
-            <div class="form-submit"><a href="{{ url_for('routes.login') }}">Register</a></div>
+            <div class="form-submit"><a href="{{ url_for('rotues.vehicles') }}">Register new vehicle</a></div>
         </div>
 
         

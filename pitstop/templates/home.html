@@ -16,13 +16,13 @@
                 <li>About</li>
                 <li>Support</li>
             </ul>
-            <button class="nav-cto">Log in</button>
+            <a href="{{ url_for('routes.login') }}"><button class="nav-cto">Log in</button></a>
                 
         </nav>
         <h1 class="heading-1">MECHANICS ON THE MOVE</h1>
         <h1 class="heading-2">FOR CARS THAT CANT</h1>
         <p class="center-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lacus mauris, mollis feugiat nisl in, malesuada sollicitudin est. Suspendisse in lectus risus.</p>
-        <a href="{{url_for('register')}}"><button class="cto-content">GET STARTED</button></a>
+        <a href="{{url_for('routes.register')}}"><button class="cto-content">GET STARTED</button></a>
         
     </div>
 </body>

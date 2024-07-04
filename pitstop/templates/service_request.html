@@ -63,6 +63,7 @@
             
         </div>
     </div>
-    <button onclick="window.location.href='{{url_for('home_testing')}}'" class="button-register" style="border-radius: 10px;">Request</button>
+    <div class="form-submit"><a href="{{ url_for('routes.dashboard') }}">Request</a></div>
+
 </div>
 {% endblock content %}

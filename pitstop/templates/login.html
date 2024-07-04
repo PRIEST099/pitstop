@@ -10,25 +10,15 @@
 <body>
     <div class="content">
         <nav class="hero">
-            <h3 class="logo">PIT<span class="logo-design">STOP</span></h3>
-            <ul>
-                <li>Home</li>
-                <li>About</li>
-                <li>Support</li>
-            </ul>
-            <button class="nav-cto">Log in</button>
+            <h3 class="logo-auth">PIT<span class="logo-design">STOP</span></h3>
         </nav>
-        <div class="form-content">
+        <div class="form-content-auth">
             <div class="form-cto">
-                <p>Join the Community</p>
-                <a href="{{ url_for('home_testing') }}">Sign up</a>
+                <p>Welcome back</p>
+                <a href="{{ url_for('routes.register') }}">Sign up</a>
             </div>
             <div class="form-register">
                 <div class="form-group">
-                    <div class="input-box">
-                        <input type="text" name="first_name" id="first_name" required style="text-transform: capitalize;">
-                        <span>First Name</span>
-                    </div>
                     <div class="input-box">
                         <input type="text" name="username" id="username" required>
                         <span>Username</span>
@@ -38,23 +28,9 @@
                         <span>Password</span>
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="input-box">
-                        <input type="text" name="last_name" id="last_name" required style="text-transform: uppercase;">
-                        <span>Last Name</span>
-                    </div>
-                    <div class="input-box">
-                        <input type="email" name="email" id="email" required>
-                        <span>Email</span>
-                    </div>
-                    <div class="input-box">
-                        <input type="password" name="confirm_password" id="confirm_password" required>
-                        <span>Confirm Password</span>
-                    </div>
-                    
-                </div>
+
             </div>
-            <button class="button-register">Register</button>
+            <div class="form-submit"><a href="{{ url_for('routes.dashboard') }}">Log in</a></div>
         </div>
 
         
