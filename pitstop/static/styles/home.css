@@ -16,7 +16,7 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.8);
     z-index: -1;
 }
 
@@ -54,6 +54,16 @@ body::before {
     color: white;
     justify-content: space-between;
     padding: 0 15px;
+}
+
+.hero ul li a {
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.hero ul li a:hover {
+    color: #006FFF;
 }
 
 .nav-cto {

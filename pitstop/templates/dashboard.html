@@ -1,10 +1,66 @@
 {% extends 'layout.html' %}
 {% block content %}
-    <h1 class="row-content">Quick links</h1>
-    <hr style="margin: 20px 0;">
-    <div class="" style="justify-content: space-around; align-items: center; text-align: center;">
-        <div class="quick-links blur"><a href="{{url_for('routes.service_request')}}">Request Service</a></div>
-        <div class="quick-links blur"><a href="{{url_for('routes.new_vehicle')}}">Manage new Vehicle</a></div>
-        <div class="quick-links blur"><a href="{{url_for('routes.home_testing')}}">Log out</a></div>
+<div class="dashboard-container">
+    <section class="quick-actions">
+        <div class="actions">
+            <button>Schedule Service</button>
+            <button>Add Vehicles</button>
+            <button>Support center</button>
+        </div>
+    </section>
+    <div class="dashboard-section">
+        <section class="activity-feed">
+            <h3>Recent Activity</h3>
+            <ul>
+                <li>Task "Fix Brakes" completed</li>
+                <li>Service "Oil Change" scheduled</li>
+                <li>New vehicle added</li>
+            </ul>
+        </section>
+        <section class="upcoming-appointments">
+            <h3>Upcoming Appointments</h3>
+            <ul>
+                <li>Oil Change - July 10, 2024</li>
+                <li>Tire Replacement - July 15, 2024</li>
+            </ul>
+        </section>
+        <section class="notifications">
+            <h3>Notifications</h3>
+            <ul>
+                <li>Reminder: Service appointment tomorrow</li>
+                <li>Update: Task "Check Engine" due soon</li>
+            </ul>
+        </section>
     </div>
+    <div class="services-dash">
+        <h2 class="section-title">Recommended Services</h2>
+        <div class="service-dash-list">
+            <div class="service-dash-item">
+                <h3>Oil Change</h3>
+                <p>Keep your engine running smoothly with regular oil changes. Recommended every 3,000 to 5,000 miles.</p>
+                <button class="btn">Schedule</button>
+            </div>
+            <div class="service-dash-item">
+                <h3>Brake Inspection</h3>
+                <p>Ensure your safety with regular brake inspections. We check pads, rotors, and fluid levels.</p>
+                <button class="btn">Schedule</button>
+            </div>
+            <div class="service-dash-item">
+                <h3>Battery Check</h3>
+                <p>Don't get stranded with a dead battery. Regular checks can help avoid unexpected issues.</p>
+                <button class="btn">Schedule</button>
+            </div>
+            <div class="service-dash-item">
+                <h3>Tire Rotation</h3>
+                <p>Extend the life of your tires and improve your vehicle's performance with regular rotations.</p>
+                <button class="btn">Schedule</button>
+            </div>
+        </div>
+    </div>
+    <!-- <section class="user-stats">
+        <h3>User Stats</h3>
+        <div class="stats-chart">
+        </div>
+    </section> -->
+</div>
 {% endblock content %}

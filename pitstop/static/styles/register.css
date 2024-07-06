@@ -172,8 +172,10 @@ body::before {
     color: #006FFF;
 }
 
+
 .form-submit {
     display: flex;
+    width: 100%;
     margin: 0 auto;
     justify-content: center;
     align-items: center;
@@ -186,8 +188,13 @@ body::before {
     font-size: 20px;
 }
 
-.form-submit a {
-    text-decoration: none;
+.form-submit button {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    outline: none;
     color: white;
+    width: 100%;
+    height: 100%;
 }
 

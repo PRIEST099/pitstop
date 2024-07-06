@@ -1,47 +1,37 @@
 {% extends 'layout.html' %}
 {% block content %}
-    <div class="content">
-        <div class="space-between">
-            <h3>Your vehicles</h3>
-            <div class="button-general">
-                <a href="{{ url_for('routes.new_vehicle') }}">Add new car</a>
+<section class="vehicles">
+    <h2 class="section-title">My Vehicles</h2>
+    <div class="vehicle-grid">
+        <div class="vehicle-card">
+            <div class="vehicle-header">
+                <h3 class="vehicle-title">Toyota Camry</h3>
+                <span class="vehicle-year">2019</span>
+            </div>
+            <div class="vehicle-details">
+                <p><strong>License Plate:</strong> ABC-1234</p>
+                <p><strong>VIN:</strong> 1HGCM82633A123456</p>
+            </div>
+            <div class="vehicle-actions">
+                <button class="action-btn">View Details</button>
+                <button class="action-btn">Service History</button>
             </div>
         </div>
-        <div class="list-content blur row-content">
-            <div class="list-group">
-                <pre class="list-item">Name: --</pre>
-                <p class="list-item">Model: --</p>
-                <p class="list-item">Plate: --</p>
+        <div class="vehicle-card">
+            <div class="vehicle-header">
+                <h3 class="vehicle-title">Honda Accord</h3>
+                <span class="vehicle-year">2018</span>
             </div>
-            <div class="list-group">
-                <pre class="list-item">Type: --</pre>
-                <p class="list-item">Year: --</p>
-                <p class="list-item">Color: --</p>
+            <div class="vehicle-details">
+                <p><strong>License Plate:</strong> XYZ-5678</p>
+                <p><strong>VIN:</strong> 2HGCM82633B654321</p>
             </div>
-            <div class="list-group">
-                <pre class="list-item">edit vehicle</pre>
-                <p class="list-item">remove vehicle</p>
-                <p class="list-item">added on: --</p>
+            <div class="vehicle-actions">
+                <button class="action-btn">View Details</button>
+                <button class="action-btn">Service History</button>
             </div>
         </div>
-        <hr style="margin: 10px 0;">
-        <div class="list-content blur row-content">
-            <div class="list-group">
-                <pre class="list-item">Name: --</pre>
-                <p class="list-item">Model: --</p>
-                <p class="list-item">Plate: --</p>
-            </div>
-            <div class="list-group">
-                <pre class="list-item">Type: --</pre>
-                <p class="list-item">Year: --</p>
-                <p class="list-item">Color: --</p>
-            </div>
-            <div class="list-group">
-                <pre class="list-item">edit vehicle</pre>
-                <p class="list-item">remove vehicle</p>
-                <p class="list-item">added on: --</p>
-            </div>
-        </div>
-
+        <!-- More vehicle cards can be added here -->
     </div>
+</section>
 {% endblock content %}

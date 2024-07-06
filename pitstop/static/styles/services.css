@@ -1,0 +1,65 @@
+.services {
+    padding: 20px;
+    margin: 20px;
+    background-color: #007bff1e;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.section-title {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.service-timeline {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.timeline-date {
+    width: 150px;
+    text-align: right;
+    padding-right: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: white;
+}
+
+.timeline-content {
+    background: #007bff2c;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.timeline-content h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    font-family: 'Josefin Sans', sans-serif;
+    margin-bottom: 0;
+    font-weight: 300;
+}
+
+.timeline-item:hover .timeline-content {
+    background: #007bff42;
+    transform: translateY(-5px);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}

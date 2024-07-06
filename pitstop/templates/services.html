@@ -1,20 +1,45 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-    <div class="content">
-        <h2>Your Current Services</h2>
-        <div class="services-list">
-            {% for service in services %}
-                <div class="service-card blur">
-                    <h3>{{ service.type }}</h3>
-                    <p><strong>Service ID:</strong> {{ service.id }}</p>
-                    <p><strong>Description:</strong> {{ service.description }}</p>
-                    <p><strong>Requested On:</strong> {{ service.date_requested }}</p>
-                    <p><strong>Estimated Completion:</strong> {{ service.estimated_completion }}</p>
-                    <p><strong>Status:</strong> {{ service.status }}</p>
-                    <p><strong>Assigned Mechanic:</strong> {{ service.mechanic }}</p>
-                </div>
-            {% endfor %}
+<div class="services">
+    <h2 class="section-title">My Services</h2>
+    <div class="service-timeline">
+        <div class="timeline-item">
+            <div class="timeline-date">
+                <p>June 12, 2024</p>
+            </div>
+            <div class="timeline-content">
+                <h3>Oil Change</h3>
+                <p>Service completed by XYZ Auto Shop. Next scheduled maintenance: September 2024.</p>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">
+                <p>May 20, 2024</p>
+            </div>
+            <div class="timeline-content">
+                <h3>Brake Inspection</h3>
+                <p>Service completed by ABC Mechanics. No issues found.</p>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">
+                <p>April 15, 2024</p>
+            </div>
+            <div class="timeline-content">
+                <h3>Battery Check</h3>
+                <p>Service completed by DEF Auto Services. Battery in good condition.</p>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">
+                <p>March 10, 2024</p>
+            </div>
+            <div class="timeline-content">
+                <h3>Tire Rotation</h3>
+                <p>Service completed by GHI Tires. Recommended next rotation: June 2024.</p>
+            </div>
         </div>
     </div>
+</div>
 {% endblock %}
