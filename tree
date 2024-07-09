@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# Function to print the directory tree structure
+print_tree() {
+    local directory="$1"
+    local prefix="$2"
+    local is_last="$3"
+    
+    echo "${prefix}${is_last}$(basename "$directory")/"
+    prefix="${prefix}${is_last}  "
+
+    local items=("$directory"/*)
+    local last_item="${items[-1]}"
+
+    for item in "${items[@]}"; do
+        if [[ -d "$item" ]]; then
+            print_tree "$item" "$prefix" "$([[ "$item" == "$last_item" ]] && echo └── || echo ├──)"
+        elif [[ -f "$item" && "${item##*.}" == "py" ]]; then
+            echo "${prefix}$( [[ "$item" == "$last_item" ]] && echo └── || echo ├──)$(basename "$item")"
+        fi
+    done
+}
+
+# Function to print the content of .py files
+print_python_content() {
+    find . -type f -name "*.py" | while read -r file; do
+        echo -e "\nContent of $file:"
+        cat "$file"
+        echo -e "\n========================================\n"
+    done
+}
+
+# Print the tree structure
+echo "Directory tree structure:"
+print_tree "." "" "├──"
+
+# Print the content of .py files
+echo "Contents of Python files:"
+print_python_content
+

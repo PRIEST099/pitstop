@@ -9,16 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Function to check if user exists
     function checkUser(usernameValue, emailValue) {
-        let url = 'http://localhost:5000/api/check_user';
-
-        if (usernameValue) {
-            url += `?username=${usernameValue}`;
-        } else if (emailValue) {
-            url += `?email=${emailValue}`;
-        } else {
-            console.error('Username or email is required.');
-            return Promise.reject('Username or email is required.');
-        }
+        let url = `${BASE_URL}?username=${usernameValue}&email=${emailValue}`;
 
         return fetch(url)
             .then(response => {
@@ -28,13 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 return response.json();
             })
             .then(data => {
-                console.log(data);
-                // Handle response data here
                 if (data.exists) {
-                    console.log('User already exists!');
                     return Promise.resolve(false); // User exists
                 } else {
-                    console.log('User does not exist.');
                     return Promise.resolve(true); // User does not exist
                 }
             })
@@ -87,10 +74,8 @@ document.addEventListener("DOMContentLoaded", () => {
             try {
                 const userExists = await checkUser(username.value, email.value);
                 if (!userExists) {
-                    // User exists, do not submit the form
                     alert("User with that username or email already exists.");
                 } else {
-                    // User does not exist, submit the form
                     form.submit();
                 }
             } catch (error) {

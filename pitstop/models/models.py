@@ -62,15 +62,18 @@ class Service(db.Model):
 class Booking(db.Model):
     '''
         Represents orders made by users specific services.
-        It includes foreign keys to both user and service tables
+        It includes foreign keys to both user and service tables and vehicles table
     '''
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     service_id = db.Column(db.Integer, db.ForeignKey('service.id'), nullable=False)
+    vehicle_id = db.Column(db.Integer, db.ForeignKey('vehicle.id'), nullable=False)
+    description = db.Column(db.Text, nullable=True)
     appointment_time = db.Column(db.DateTime, nullable=False)
     status = db.Column(db.String(80), nullable=False)
     technician_bookings = db.relationship('TechnicianBooking', backref='booking', lazy=True)
+    vehicle = db.relationship('Vehicle', backref='bookings', lazy=True)
 
 
 #  Technician table

@@ -146,3 +146,17 @@ section ul li {
 .service-dash-item .btn:hover {
     background-color: #0056b3;
 }
+
+.link-regular {
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    padding: 10px 20px;
+    margin: 0 2px;
+    color: white;
+    transition: all .2s ease-in-out;
+}
+.link-regular:hover {
+    background-color: #0056b3;
+}

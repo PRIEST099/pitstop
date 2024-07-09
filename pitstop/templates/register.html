@@ -4,10 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/register.css') }}">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sas:ital, wght@0,100;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:wght@700;800;900&display=swap">
-    <script src="{{ url_for('static', filename='scripts/register.js') }}">
-        const BASE_URL = "{{ url_for('api.check_user', _external=True) }}"
-    </script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap">
     <title>{{title}}</title>
 </head>
 <body>
@@ -49,14 +46,16 @@
                             <input type="password" name="confirm_password" id="confirm_password" required>
                             <span>Confirm Password</span>
                         </div>
-                        
                     </div>
                 </div>
                 <button type="submit" class="form-submit">Register</button>
             </div>
         </form>
-
-        
     </div>
+
+    <script>
+        const BASE_URL = "{{ url_for('api.check_user', _external=True) }}";
+    </script>
+    <script src="{{ url_for('static', filename='scripts/register.js') }}"></script>
 </body>
 </html>

@@ -1,0 +1,642 @@
+[
+    {
+        "title": "Engine Misfires",
+        "tip": "Check and replace spark plugs and ignition coils if necessary. Misfires can also be caused by issues with fuel injectors or the engine control unit (ECU)."
+    },
+    {
+        "title": "Car Battery Issues",
+        "tip": "Test the battery voltage and terminals regularly. Clean terminals if corroded and replace the battery if it's old or not holding charge."
+    },
+    {
+        "title": "Brake Noise",
+        "tip": "Inspect brake pads and discs for wear. Replace worn-out brake pads and resurface or replace brake discs as needed."
+    },
+    {
+        "title": "Overheating Engine",
+        "tip": "Check coolant levels and inspect the radiator and hoses for leaks or blockages. Replace thermostat if necessary and ensure the cooling fan is working."
+    },
+    {
+        "title": "Transmission Slipping",
+        "tip": "Check transmission fluid levels and condition. Replace old or low fluid, and consider a transmission flush if needed. Inspect for leaks and worn-out clutch components."
+    },
+    {
+        "title": "Suspension Noise",
+        "tip": "Inspect shocks, struts, and suspension bushings for wear or damage. Replace worn-out components to improve ride comfort and handling."
+    },
+    {
+        "title": "Exhaust System Problems",
+        "tip": "Check for leaks or holes in the exhaust system. Replace corroded or damaged sections of the exhaust pipe, muffler, or catalytic converter."
+    },
+    {
+        "title": "Steering Wheel Vibrations",
+        "tip": "Check wheel balance and alignment. Replace worn-out tires and inspect suspension components for damage or wear."
+    },
+    {
+        "title": "Air Conditioning Issues",
+        "tip": "Inspect refrigerant levels and compressor operation. Clean or replace cabin air filters and check for leaks in the AC system."
+    },
+    {
+        "title": "Electrical Problems",
+        "tip": "Check fuses and wiring for signs of damage or corrosion. Test battery voltage and alternator output. Diagnose and repair faulty electrical components."
+    },
+    {
+        "title": "Oil Leaks",
+        "tip": "Inspect oil pan, gaskets, and seals for leaks. Replace worn-out gaskets and seals to prevent oil leaks and engine damage."
+    },
+    {
+        "title": "Check Engine Light",
+        "tip": "Use an OBD-II scanner to retrieve trouble codes. Diagnose and repair the underlying issue causing the check engine light to illuminate."
+    },
+    {
+        "title": "Rough Idling",
+        "tip": "Clean or replace idle air control valve (IACV) and throttle body. Check for vacuum leaks and inspect spark plugs and ignition system."
+    },
+    {
+        "title": "Stalling",
+        "tip": "Inspect fuel system for clogged fuel filter or malfunctioning fuel pump. Check ignition system for faulty spark plugs or ignition coils."
+    },
+    {
+        "title": "Power Window Failure",
+        "tip": "Check window regulator and motor for wear or electrical issues. Replace faulty components and ensure proper lubrication of window tracks."
+    },
+    {
+        "title": "Squeaky Belts",
+        "tip": "Inspect belts for wear and proper tension. Replace worn-out belts and adjust tension to eliminate squeaking noises."
+    },
+    {
+        "title": "Hard Starting",
+        "tip": "Check fuel system for issues with fuel delivery or pressure. Test battery condition and starter motor operation."
+    },
+    {
+        "title": "Dashboard Warning Lights",
+        "tip": "Refer to the owner's manual to identify the meaning of dashboard warning lights. Diagnose and address the specific issue indicated."
+    },
+    {
+        "title": "Cooling System Leaks",
+        "tip": "Inspect radiator, hoses, and water pump for leaks. Replace damaged components and check coolant levels regularly."
+    },
+    {
+        "title": "Poor Fuel Economy",
+        "tip": "Check tire pressure and alignment. Replace air filters regularly and maintain proper engine tune-up. Avoid aggressive driving habits."
+    },
+    {
+        "title": "Hesitation Under Acceleration",
+        "tip": "Inspect and clean fuel injectors. Check for vacuum leaks and inspect ignition system components."
+    },
+    {
+        "title": "Worn Out Wiper Blades",
+        "tip": "Replace windshield wiper blades regularly to ensure clear visibility during rain or snow."
+    },
+    {
+        "title": "Rust Prevention",
+        "tip": "Wash and wax your car regularly to protect the paint and prevent rust formation. Inspect vulnerable areas like wheel wells and undercarriage."
+    },
+    {
+        "title": "Headlight Alignment",
+        "tip": "Check headlight alignment to ensure proper illumination and visibility. Adjust headlights if they are misaligned."
+    },
+    {
+        "title": "Cabin Air Quality",
+        "tip": "Replace cabin air filter regularly to improve air circulation and remove contaminants from the cabin."
+    },
+    {
+        "title": "Excessive Exhaust Smoke",
+        "tip": "Different colors of exhaust smoke indicate different problems. Blue smoke may indicate oil burning, white smoke could indicate coolant leakage, and black smoke suggests fuel combustion issues."
+    },
+    {
+        "title": "Noisy Lifters",
+        "tip": "Check engine oil levels and quality. Perform an oil change and use the recommended oil viscosity to quiet noisy lifters."
+    },
+    {
+        "title": "Power Steering Fluid Leaks",
+        "tip": "Inspect power steering hoses, pump, and reservoir for leaks. Replace damaged components and refill with recommended power steering fluid."
+    },
+    {
+        "title": "Clutch Problems",
+        "tip": "Check clutch fluid levels and inspect for leaks. Adjust clutch pedal free play and replace worn-out clutch components if necessary."
+    },
+    {
+        "title": "Engine Knocking",
+        "tip": "Use high-quality fuel to prevent engine knocking. Check ignition timing and inspect for carbon deposits on spark plugs."
+    },
+    {
+        "title": "Window Motor Failure",
+        "tip": "Inspect window motor for electrical issues or mechanical failure. Replace faulty window motor to restore window operation."
+    },
+    {
+        "title": "Battery Drain",
+        "tip": "Check for parasitic drains by testing battery draw when the car is off. Inspect electrical components and wiring for issues."
+    },
+    {
+        "title": "Brake Fluid Contamination",
+        "tip": "Regularly check brake fluid color and condition. Replace brake fluid if it appears dark or contaminated to maintain brake performance."
+    },
+    {
+        "title": "Rough Gear Shifts",
+        "tip": "Inspect transmission fluid levels and condition. Perform a transmission flush if needed and check for worn-out transmission mounts."
+    },
+    {
+        "title": "Sunroof Issues",
+        "tip": "Inspect sunroof seals and tracks for debris or wear. Lubricate moving parts and replace damaged seals to prevent leaks."
+    },
+    {
+        "title": "Sudden Loss of Power",
+        "tip": "Check fuel filters for clogs and inspect the fuel pump for proper operation. Test ignition system components for faults."
+    },
+    {
+        "title": "Gauges Not Working",
+        "tip": "Check instrument cluster fuses and wiring for faults. Replace faulty gauges or instrument cluster components."
+    },
+    {
+        "title": "Steering Wheel Lock",
+        "tip": "Check steering wheel lock mechanism for debris or mechanical issues. Lubricate lock mechanism and inspect steering column."
+    },
+    {
+        "title": "Wheel Bearing Noise",
+        "tip": "Inspect wheel bearings for wear and play. Replace worn-out wheel bearings to eliminate noise and prevent further damage."
+    },
+    {
+        "title": "High Pitched Squeal When Braking",
+        "tip": "Check brake pads for wear indicators. Replace brake pads if worn down and inspect brake discs for scoring or damage."
+    },
+    {
+        "title": "Poor Heater Performance",
+        "tip": "Check coolant levels and flush heater core if clogged. Inspect heater hoses for leaks and ensure proper operation of heater controls."
+    },
+    {
+        "title": "Rear View Mirror Loose",
+        "tip": "Inspect mirror mounting and adhesive for wear. Replace adhesive or mounting hardware to secure the rear view mirror."
+    },
+    {
+        "title": "Airbag Warning Light",
+        "tip": "Refer to the vehicle's service manual for airbag warning light troubleshooting steps. Diagnose and repair the airbag system as needed."
+    },
+    {
+        "title": "Windshield Cracks",
+        "tip": "Repair small cracks promptly to prevent them from spreading. Replace windshield if cracks are large or obstructing driver's view."
+    },
+    {
+        "title": "Sticky Door Handles",
+        "tip": "Clean and lubricate door handle mechanisms. Replace door handle if damaged or excessively worn."
+    },
+    {
+        "title": "Oxygen Sensor Malfunction",
+        "tip": "Check oxygen sensor for carbon buildup or damage. Replace oxygen sensor if it fails to maintain proper fuel-air mixture."
+    },
+    {
+        "title": "Soft Brake Pedal",
+        "tip": "Check brake fluid levels and inspect for air bubbles in the brake lines. Bleed brake system if necessary and check for leaks."
+    },
+    {
+        "title": "Excessive Tire Wear",
+        "tip": "Check tire pressure and alignment regularly. Rotate tires and replace worn-out tires to prevent unevenwear."
+    },
+    {
+    "title": "Dented Bumper",
+    "tip": "Inspect bumper for structural damage and cracks. Repair dents using appropriate tools and materials."
+    },
+    {
+    "title": "Dashboard Rattles",
+    "tip": "Check dashboard mounting clips and fasteners. Secure loose components and padding to eliminate rattles."
+    },
+    {
+    "title": "Dirty Fuel Injectors",
+    "tip": "Use fuel injector cleaner additives regularly to clean deposits. Replace clogged injectors if cleaning does not improve performance."
+    },
+    {
+    "title": "Faulty EGR Valve",
+    "tip": "Inspect EGR valve for carbon buildup or mechanical failure. Clean or replace EGR valve to restore exhaust gas recirculation functionality."
+    },
+    {
+    "title": "ABS Light On",
+    "tip": "Check ABS sensors and wiring for faults. Diagnose and repair ABS system components as per manufacturer's specifications."
+    },
+    {
+    "title": "Hard Steering",
+    "tip": "Check power steering fluid levels and inspect for leaks. Test power steering pump and steering gear for faults."
+    },
+    {
+    "title": "Loose Battery Terminals",
+    "tip": "Inspect battery terminals for corrosion or looseness. Clean terminals and tighten connections to ensure proper electrical contact."
+    },
+    {
+    "title": "Uneven Tire Pressure",
+    "tip": "Check tire pressure regularly and adjust according to manufacturer's recommendations. Use a reliable tire pressure gauge."
+    },
+    {
+    "title": "Foggy Headlights",
+    "tip": "Restore headlights using a headlight restoration kit or professional cleaning service. Apply protective coating to prevent future fogging."
+    },
+    {
+    "title": "Broken Side Mirror",
+    "tip": "Replace broken side mirror glass or assembly. Ensure proper alignment and secure mounting of the new side mirror."
+    },
+    {
+    "title": "Clogged PCV Valve",
+    "tip": "Inspect PCV valve for carbon buildup or malfunction. Clean or replace PCV valve to prevent crankcase pressure issues."
+    },
+    {
+    "title": "Fuel Tank Leaks",
+    "tip": "Inspect fuel tank and fuel lines for corrosion or damage. Replace leaking components and tighten fittings."
+    },
+    {
+    "title": "Worn Out Ball Joints",
+    "tip": "Check ball joints for excessive play or wear. Replace worn-out ball joints to restore steering and suspension performance."
+    },
+    {
+    "title": "Dashboard Scratches",
+    "tip": "Use a microfiber cloth and plastic polish to gently buff out scratches. Avoid abrasive cleaners that may damage dashboard surfaces."
+    },
+    {
+    "title": "Gearbox Whining Noise",
+    "tip": "Check gearbox fluid levels and condition. Replace gearbox fluid and inspect for worn-out bearings or gears."
+    },
+    {
+    "title": "Stiff Gear Shifts",
+    "tip": "Inspect gear shift linkage for wear or binding. Lubricate linkage and adjust shift cables for smoother gear shifts."
+    },
+    {
+    "title": "Flickering Headlights",
+    "tip": "Check headlight bulbs and wiring for loose connections. Replace faulty bulbs and inspect headlight harness for damage."
+    },
+    {
+    "title": "Power Door Lock Failure",
+    "tip": "Inspect door lock actuators and wiring for faults. Replace faulty actuators and ensure proper operation of power door lock system."
+    },
+    {
+    "title": "Coolant Smell Inside the Car",
+    "tip": "Inspect heater core and hoses for leaks. Replace heater core or hoses if coolant is leaking into the cabin."
+    },
+    {
+    "title": "Engine Oil Sludge",
+    "tip": "Use high-quality synthetic oil and change oil at regular intervals. Use engine flush products to clean engine internals if sludge buildup occurs."
+    },
+    {
+    "title": "Rough Ride",
+    "tip": "Check shock absorbers and suspension components for wear or leaks. Replace worn-out shocks and inspect bushings for damage."
+    },
+    {
+    "title": "Malfunctioning Cruise Control",
+    "tip": "Check cruise control switch and wiring for faults. Diagnose and repair cruise control module or speed sensor issues."
+    },
+    {
+    "title": "Worn Out Seat Belts",
+    "tip": "Inspect seat belts for fraying or damage. Replace worn-out seat belts to ensure passenger safety in the event of an accident."
+    },
+    {
+    "title": "Sticky Throttle",
+    "tip": "Inspect throttle body for carbon buildup or mechanical issues. Clean throttle body and replace throttle position sensor if necessary."
+    },
+    {
+    "title": "Radiator Fan Issues",
+    "tip": "Check radiator fan motor and relay for faults. Replace faulty components to ensure proper cooling system operation."
+    },
+    {
+    "title": "Fuel Smell Inside the Car",
+    "tip": "Inspect fuel lines and connections for leaks. Replace damaged fuel lines and tighten fittings to eliminate fuel odors."
+    },
+    {
+    "title": "Worn Out Door Seals",
+    "tip": "Inspect door seals for cracks or tears. Replace worn-out door seals to prevent water leaks and improve cabin insulation."
+    },
+    {
+    "title": "Engine Hesitation",
+    "tip": "Check fuel injectors and fuel filter for clogs. Inspect ignition system for faulty spark plugs or ignition coils."
+    },
+    {
+    "title": "Transmission Fluid Leak",
+    "tip": "Inspect transmission pan, seals, and lines for leaks. Replace damaged components and refill transmission fluid to recommended levels."
+    },
+    {
+    "title": "Rattling Exhaust",
+    "tip": "Check exhaust system for loose or broken hangers. Replace worn-out hangers and secure exhaust components to eliminate rattling noises."
+    },
+    {
+    "title": "Faded Paint",
+    "tip": "Regularly wash and wax your car to protect the paint from fading. Use paint restoration products to revive dull or faded paint."
+    },
+    {
+    "title": "Worn Out Timing Belt",
+    "tip": "Replace timing belt at manufacturer-recommended intervals. Inspect timing belt tensioner and pulleys for wear."
+    },
+    {
+    "title": "Foggy Windows",
+    "tip": "Use an anti-fog treatment on windows to prevent condensation buildup. Check weather stripping and cabin air circulation."
+    },
+    {
+    "title": "Spongy Brake Pedal",
+    "tip": "Check brake fluid levels and bleed brakes to remove air bubbles. Inspect brake lines for leaks and replace worn-out brake pads."
+    },
+    {
+    "title": "Faulty Fuel Gauge",
+    "tip": "Check fuel sending unit and wiring for faults. Replace faulty fuel sending unit to restore accurate fuel level readings."
+    },
+    {
+    "title": "Power Steering Noise",
+    "tip": "Inspect power steering fluid levels and condition. Replace old fluid and check for leaks in power steering pump or hoses."
+    },
+    {
+    "title": "Emissions Test Failure",
+    "tip": "Check oxygen sensors and catalytic converter for faults. Replace worn-out components and ensure proper engine tune-up."
+    },
+    {
+    "title": "Cracked Dashboard",
+    "tip": "Repair cracks in the dashboard using dashboard repair kits. Avoid exposing dashboard to direct sunlight to prevent further cracking."
+    },
+    {
+    "title": "Rough Engine Idle",
+    "tip": "Clean throttle body and idle air control valve (IACV). Check for vacuum leaks and inspect ignition system components."
+    },
+    {
+    "title": "Malfunctioning Traction Control",
+    "tip": "Inspect wheel speed sensors and wiring for faults. Diagnose and repair traction control module or sensor issues."
+    },
+    {
+    "title": "Airbag Deployment Concerns",
+    "tip": "Regularly inspect airbag system components for recalls. Follow manufacturer's guidelines for airbag maintenance and replacement."
+    },
+    {
+    "title": "Frequent Bulb Burnouts",
+    "tip": "Check electrical connections and inspect for voltage spikes. Replace bulbs with high-quality, recommended replacements."
+    },
+    {
+    "title": "Soft Brake Pedal",
+    "tip": "Check brake fluid levels and inspect for air bubbles in the brake lines. Bleed brake system if necessary and check for leaks."
+    },
+    {
+    "title": "Excessive Engine Vibration",
+    "tip": "Check engine mounts and transmission mounts for wear or damage. Replace worn-out mounts to reduce engine vibrations."
+    },
+    {
+    "title": "Sluggish Acceleration",
+    "tip": "Inspect air filter and intake system for clogs. Check fuel system for proper pressure and inspect ignition system for faults."
+    },
+    {
+    "title": "Frozen Door Locks",
+    "tip": "Use de-icing solution or warm water to thaw frozen door locks. Avoid using excessive force to prevent damage to lock mechanism."
+    },
+    {
+    "title": "Dim Headlights",
+    "tip": "Inspect headlight bulbs for wear and replace if necessary. Clean headlight lenses to improve light output and visibility."
+    },
+    {
+    "title": "Faulty Fuel Injector",
+    "tip": "Clean fuel injectors with injector cleaner additives. Replace clogged or malfunctioning fuel injectors as needed."
+    },
+    {
+    "title": "Underbody Rust",
+    "tip": "Regularly wash and inspect the underbody for signs of rust. Apply rust protection coatings to vulnerable areas."
+    },
+    {
+    "title": "Malfunctioning Odometer",
+    "tip": "Check speed sensor and wiring for faults. Replace faulty speed sensor to restore accurate odometer readings."
+    },
+    {
+    "title": "Burnt Out Fuse",
+    "tip": "Inspect fuse box for burnt-out fuses. Replace fuses with correct amperage ratings to prevent electrical issues."
+    },
+    {
+    "title": "Door Seal Leaks",
+    "tip": "Inspect door seals for tears or damage. Replace worn-out door seals to prevent water leaks and improve cabin insulation."
+    },
+    {
+    "title": "Engine Coolant Contamination",
+    "tip": "Check for oil or exhaust gases in the coolant. Inspect head gasket and engine block for leaks or damage."
+    },
+    {
+    "title": "Rough Braking",
+    "tip": "Inspect brake pads and discs for wear. Replace worn-out brake pads and resurface or replace brake discs as needed."
+    },
+    {
+    "title": "Intermittent Starting Issues",
+    "tip": "Check battery terminals for corrosion and ensure tight connections. Test battery voltage and inspect starter motor."
+    },
+    {
+    "title": "Sticky Parking Brake",
+    "tip": "Inspect parking brake cables and adjust tension. Lubricate parking brake mechanism to ensure smooth operation."
+    },
+    {
+    "title": "Malfunctioning Oil Pressure Gauge",
+    "tip": "Check oil pressure sensor and wiring for faults. Replace faulty oil pressure sensor to restore accurate gauge readings."
+    },
+    {
+    "title": "Foggy Taillights",
+    "tip": "Clean taillight lenses using a lens cleaning kit. Apply a protective coating to prevent future fogging."
+    },
+    {
+    "title": "Excessive Belt Noise",
+    "tip": "Inspect belts for wear and proper tension. Replace worn-out belts and adjust tension to eliminate squeaking noises."
+    },
+    {
+    "title": "Failing Alternator",
+    "tip": "Check alternator output using a multimeter. Replace faulty alternator if it fails to maintain proper charging voltage."
+    },
+    {
+    "title": "Loose Exhaust System",
+    "tip": "Inspect exhaust hangers and mounts for wear. Replace worn-out hangers and secure exhaust system components."
+    },
+    {
+    "title": "Sudden Steering Wheel Jerks",
+    "tip": "Check power steering fluid levels and inspect for leaks. Test power steering pump and steering gear for faults."
+    },
+    {
+    "title": "Excessive Cabin Noise",
+    "tip": "Check door seals and weather stripping for wear. Inspect insulation and soundproofing materials in the cabin."
+    },
+    {
+    "title": "Power Window Motor Failure",
+    "tip": "Inspect window motor for electrical issues or mechanical failure. Replace faulty window motor to restore window operation."
+    },
+    {
+    "title": "Rough Engine Performance",
+    "tip": "Check engine air filter and intake system for clogs. Inspect fuel injectors and ignition system for faults."
+    },
+    {
+    "title": "Headlight Aim Adjustment",
+    "tip": "Check headlight aim and adjust if necessary to improve visibility and prevent blinding other drivers."
+    },
+    {
+    "title": "Clogged Windshield Washer Jets",
+    "tip": "Clean windshield washer jets with a pin or needle. Check washer fluid reservoir and refill with recommended washer fluid."
+    },
+    {
+    "title": "Dirty Mass Airflow Sensor",
+    "tip": "Clean mass airflow sensor with specialized cleaner. Replace mass airflow sensor if cleaning does not improve engine performance."
+    },
+    {
+    "title": "Transmission Shifting Problems",
+    "tip": "Check transmission fluid levels and condition. Perform a transmission flush if needed and inspect for worn-out transmission components."
+    },
+    {
+    "title": "Failing Starter Motor",
+    "tip": "Check starter motor solenoid and wiring for faults. Replace faulty starter motor to restore reliable starting."
+    },
+    {
+    "title": "Malfunctioning Horn",
+    "tip": "Inspect horn connections and wiring for faults. Replace faulty horn or check fuse and relay for issues."
+    },
+    {
+    "title": "Stiff Clutch Pedal",
+    "tip": "Check clutch fluid levels and inspect for leaks. Adjust clutch pedal free play and lubricate clutch linkage."
+    },
+    {
+    "title": "Leaking Brake Master Cylinder",
+    "tip": "Inspect brake master cylinder for leaks. Replace worn-out seals and test brake system for proper operation."
+    },
+    {
+    "title": "Steering Wheel Play",
+    "tip": "Check steering linkage and ball joints for wear. Replace worn-out components and adjust steering gearbox."
+    },
+    {
+    "title": "Malfunctioning Seat Adjustment",
+    "tip": "Inspect seat adjustment controls and wiring for faults. Replace faulty seat motor or control module."
+    },
+    {
+    "title": "Ticking Noise from Engine",
+    "tip": "Check engine oil level and quality. Inspect for loose components or worn-out lifters. Perform an oil change if necessary."
+    },
+    {
+    "title": "Sluggish Power Door Locks",
+    "tip": "Inspect power door lock actuators and wiring for faults. Replace faulty actuators and ensure proper lubrication of door mechanisms."
+    },
+    {
+    "title": "Rough Steering Response",
+    "tip": "Check power steering fluid levels and inspect for leaks. Test power steering pump and inspect steering rack for wear."
+    },
+    {
+    "title": "Noisy Heater Blower Motor",
+    "tip": "Inspect blower motor and fan blades for debris or wear. Clean blower motor assembly and replace worn-out fan blades."
+    },
+    {
+    "title": "Stiff Accelerator Pedal",
+    "tip": "Check throttle pedal linkage and inspect for obstructions. Lubricate throttle pedal mechanism and test accelerator position sensor."
+    },
+    {
+    "title": "Malfunctioning Fuel Gauge",
+    "tip": "Check fuel sending unit and wiring for faults. Replace faulty fuel sending unit to restore accurate fuel level readings."
+    },
+    {
+    "title": "Squealing Serpentine Belt",
+    "tip": "Inspect serpentine belt tensioner for wear. Replace worn-out tensioner and adjust belt tension to eliminate squealing noises."
+    },
+    {
+    "title": "Excessive Steering Effort",
+    "tip": "Check power steering fluid levels and inspect for leaks. Test power steering pump and inspect steering components for wear."
+    },
+    {
+    "title": "Hazy Interior Glass",
+    "tip": "Clean interior glass surfaces with a glass cleaner. Use a microfiber cloth to remove streaks and improve visibility."
+    },
+    {
+    "title": "Oil Pressure Warning Light",
+    "tip": "Check oil level and condition. Inspect oil pressure sensor and wiring for faults. Replace sensor if necessary."
+    },
+    {
+    "title": "Worn Out CV Joints",
+    "tip": "Inspect CV joints and boots for tears or damage. Replace worn-out CV joints and lubricate new joints as recommended."
+    },
+    {
+    "title": "Squeaky Suspension",
+    "tip": "Check suspension bushings and components for wear. Lubricate bushings and replace worn-out suspension parts."
+    },
+    {
+    "title": "Engine Clicking Noise",
+    "tip": "Check engine oil level and quality. Inspect for loose components or worn-out lifters. Perform an oil change if necessary."
+    },
+    {
+    "title": "Steering Wheel Vibration",
+    "tip": "Check wheel balance and alignment. Inspect suspension components for wear and replace worn-out parts."
+    },
+    {
+    "title": "Dim Instrument Panel Lights",
+    "tip": "Check dashboard dimmer switch and instrument panel wiring. Replace faulty dimmer switch or check for electrical issues."
+    },
+    {
+    "title": "Rust Spots",
+    "tip": "Inspect paint for chips and scratches. Touch up paint chips and apply rust converter to prevent further rusting."
+    },
+    {
+    "title": "Engine Surging",
+    "tip": "Check air intake system for leaks or obstructions. Inspect fuel injectors and throttle body for cleanliness and proper operation."
+    },
+    {
+    "title": "Sudden Battery Drain",
+    "tip": "Check for parasitic battery drain by testing electrical components. Inspect wiring and fuses for faults."
+    },
+    {
+    "title": "Scraping Noise When Braking",
+    "tip": "Check brake pads for wear indicators. Replace brake pads if worn down and inspect brake discs for scoring or damage."
+    },
+    {
+    "title": "Malfunctioning Windshield Wipers",
+    "tip": "Inspect wiper blades and arms for wear or damage. Replace worn-out wiper blades and lubricate wiper arms."
+    },
+    {
+    "title": "Excessive Engine Noise",
+    "tip": "Check engine oil level and quality. Inspect for loose components or worn-out bearings. Perform an oil change if necessary."
+    },
+    {
+    "title": "Loud Exhaust",
+    "tip": "Inspect exhaust system for leaks or holes. Replace corroded or damaged sections of the exhaust pipe, muffler, or catalytic converter."
+    },
+    {
+    "title": "Leaking Power Steering Fluid",
+    "tip": "Inspect power steering hoses, pump, and reservoir for leaks. Replace damaged components and refill with recommended power steering fluid."
+    },
+    {
+    "title": "Noisy Climate Control System",
+    "tip": "Inspect blower motor and fan blades for debris or wear. Clean blower motor assembly and replace worn-out fan blades."
+    },
+    {
+    "title": "Sticking Brake Calipers",
+    "tip": "Check brake calipers for corrosion or sticking. Clean caliper pins and lubricate sliding surfaces to ensure proper brake operation."
+    },
+    {
+    "title": "Sluggish Heater Performance",
+    "tip": "Inspect heater core and hoses for clogs or leaks. Replace heater core or flush coolant system if necessary."
+    },
+    {
+    "title": "Foggy Rearview Mirror",
+    "tip": "Clean rearview mirror with glass cleaner and a microfiber cloth. Ensure proper ventilation inside the vehicle to prevent condensation."
+    },
+    {
+    "title": "Excessive Engine Smoke",
+    "tip": "Check engine oil level and quality. Inspect for worn-out piston rings, valve seals, or other internal engine issues."
+    },
+    {
+    "title": "Noisy Wheel Bearings",
+    "tip": "Check wheel bearings for wear or damage. Replace worn-out wheel bearings and hub assembly if necessary."
+    },
+    {
+    "title": "Stuck CD Player",
+    "tip": "Use a soft cloth to clean CD player loading mechanism. Reset CD player by disconnecting the car battery for a few minutes."
+    },
+    {
+    "title": "Engine Misfire",
+    "tip": "Inspect ignition system components for faults. Check spark plugs, ignition coils, and fuel injectors for proper operation."
+    },
+    {
+    "title": "Rear Windshield Wiper Issues",
+    "tip": "Inspect rear wiper arm and blade for wear or damage. Replace worn-out wiper blade and lubricate wiper arm pivot."
+    },
+    {
+    "title": "Bouncy Ride",
+    "tip": "Check shock absorbers and suspension components for wear or leaks. Replace worn-out shocks and inspect bushings for damage."
+    },
+    {
+    "title": "Electrical Shorts",
+    "tip": "Inspect wiring harness for damaged or exposed wires. Use electrical tape or heat shrink tubing to repair short circuits."
+    },
+    {
+    "title": "Stuck Sunroof",
+    "tip": "Check sunroof tracks and guides for debris or obstructions. Lubricate sunroof seals and moving parts."
+    },
+    {
+    "title": "Whining Differential",
+    "tip": "Check differential fluid levels and condition. Replace differential fluid and inspect for worn-out bearings or gears."
+    },
+    {
+    "title": "Squeaky Brakes",
+    "tip": "Check brake pads and discs for wear. Lubricate caliper pins and replace worn-out brake pads to eliminate squeaking noises."
+    }
+]

@@ -1,96 +1,21 @@
-body {
-    margin: 0;
-    background-image: url(../images/background.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    position: relative;
-    min-height: 100vh;
-}
-
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: -1;
-}
-.logo-auth {
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-}
-.content {
-    position: relative;
-    height: 100vh;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.hero {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 30px;
-}
-
-.hero h3 {
-    color: white;
-    font-size: 20px;
-}
-
-.hero h3 span {
-    color: #006FFF;
-}
-
-.hero ul {
-    display: flex;
-    list-style-type: none;
-    margin: 0 auto;
-    padding: 0;
-}
-
-.hero li {
-    color: white;
-    justify-content: space-between;
-    padding: 0 15px;
-}
-
-.nav-cto {
-    background-color: #006FFF;
-    align-items: center;
-    text-align: center;
-    border-radius: 30px;
-    padding: 10px 20px;
-    border-style: none;
-    color: white;
-    transition: transform .2s ease-in-out;
-}
-.nav-cto:hover {
-    transform: scale(1.1);
-}
-
-.form-cto {
+.service-form-cto {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 50px;
 }
 
-.form-cto  p {
+.service-form-cto  p {
     font-size: 25px;
     font-weight: normal;
 }
 
-.form-cto a {
+.service-form-cto a {
     color: #006FFF;
     text-decoration: none;
 }
 
-.form-content {
+.service-form-content {
     color: white;
     width: fit-content;
     margin: 0 auto;
@@ -102,7 +27,7 @@ body::before {
     -webkit-backdrop-filter: blur(3px);
 }
 
-.form-content-auth {
+.service-form-content-auth {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -118,7 +43,7 @@ body::before {
     -webkit-backdrop-filter: blur(3px);
 }
 
-.form-register {
+.service-form-register {
     width: 100%; /* Adjust width as needed */
     margin: 0 auto; /* Center horizontally */
     display: flex;
@@ -128,18 +53,18 @@ body::before {
     box-sizing: border-box;
 }
 
-.form-group {
+.service-form-group {
     margin: 10px;
     padding: 0 10px;
 }
 
-.input-box {
+.service-input-box {
     position: relative;
     margin-bottom: 20px;
     gap: 10px;
 }
 
-.input-box input {
+.service-input-box input {
     width: 100%;
     padding: 10px;
     font-size: 16px;
@@ -151,7 +76,7 @@ body::before {
     z-index: 1;
 }
 
-.input-box select{
+.service-input-box select{
     width: 100%;
     padding: 10px;
     font-size: 16px;
@@ -162,17 +87,14 @@ body::before {
     outline: none;
 }
 
-select option {
-    color: white;
-    background-color: rgb(27, 27, 27);
-}
 
-.input-box input:focus, .input-box select:hover {
+
+.service-input-box input:focus, .service-input-box select:hover {
     border-bottom: 1px solid #006FFF;
     color: white;
 }
 
-.input-box span {
+.service-input-box span {
     position: absolute;
     left: 0;
     top: 10px;
@@ -181,15 +103,15 @@ select option {
     z-index: 0;
 }
 
-.input-box input:focus ~ span,
-.input-box input:valid ~ span {
+.service-input-box input:focus ~ span,
+.service-input-box input:valid ~ span {
     top: -10px;
     font-size: 12px;
     color: #006FFF;
 }
 
 
-.form-submit {
+.service-form-submit {
     display: flex;
     width: 100%;
     margin: 0 auto;
@@ -204,7 +126,7 @@ select option {
     font-size: 20px;
 }
 
-.form-submit button {
+.service-form-submit button {
     border: none;
     background-color: transparent;
     padding: 0;
@@ -213,4 +135,3 @@ select option {
     width: 100%;
     height: 100%;
 }
-

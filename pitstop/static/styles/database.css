@@ -1,0 +1,33 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+h1, h2 {
+    color: #333;
+    text-align: center;
+}
+
+.entries {
+    margin-bottom: 30px;
+}
+
+.user-list, .vehicle-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.user-list li, .vehicle-list li {
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.user-list li:hover, .vehicle-list li:hover {
+    transform: scale(1.02);
+}

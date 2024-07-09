@@ -10,6 +10,7 @@
 .section-title {
     text-align: center;
     font-family: 'Montserrat', sans-serif;
+    color: white;
     font-weight: 700;
     margin-bottom: 20px;
 }
@@ -62,4 +63,135 @@
     transform: translateY(-5px);
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
+}
+
+.timeline-content-button {
+    background: #007bff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.timeline-content-button:hover {
+    background: #007bff;
+    transform: translateY(-5px);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
+
+
+.services-form {
+    padding: 20px;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #007bff1e;
+    border-radius: 8px;
+    color: white;
+}
+
+.service-form-cto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+}
+
+.service-form-cto  p {
+    font-size: 25px;
+    font-weight: normal;
+}
+
+.service-form-cto a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.form-content-service {
+    color: white;
+    width: fit-content;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: rgba(14, 17, 47, 0.5);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
+
+.form-service {
+    width: 100%; /* Adjust width as needed */
+    margin: 0 auto; /* Center horizontally */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 50px 0px 50px;
+    box-sizing: border-box;
+}
+.form-desc {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 50px 0px 50px;
+    box-sizing: border-box;
+}
+
+.form-group-service {
+    margin: 10px;
+    padding: 0 10px;
+}
+
+.input-box-service {
+    position: relative;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+.input-box-description {
+    width: 100%;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.input-box-time input{
+    color: white;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+}
+.input-box-service input, .input-box-description input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    outline: none;
+    z-index: 1;
+}
+
+.input-box-service select{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: transparent;;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    outline: none;
+}
+
+.input-box-service  select option {
+    color: white;
+    background-color: rgb(27, 27, 27);
+    border: none;
+    border-radius: 1px;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
 }

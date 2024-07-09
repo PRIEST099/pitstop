@@ -1,69 +1,49 @@
 {% extends 'layout.html' %}
 {% block content %}
-<div class="form-content">
-    <div class="form-register">
-        <div class="form-group">
-            <h4 style="margin: 40px 0;">USER INFORMATION</h4>
-            <div class="input-box">
-                <input type="text" name="first_name" id="first_name" required style="text-transform: capitalize;">
-                <span>First name</span>
+<form method="POST">
+    <div class="form-content-service">
+        <div class="service-form-cto">
+            <p>Schedule a new service</p>
+            <a href="{{ url_for('routes.login') }}">cancel</a>
+        </div>
+        <div class="form-service">
+            <div class="form-group-service">
+                <div class="input-box-service">
+                    <select name="vehicle_id" id="vehicle_id">
+                        <option value="" disabled selected>select your vehicle</option>
+                        {% for vehicle in vehicles %}
+                        <option value="{{ vehicle.make }}">{{ vehicle.make }} </option>
+                        {% endfor %}
+                    </select>
+                </div>
             </div>
-            <div class="input-box">
-                <input type="text" name="lask_name" id="last_name" required style="text-transform: uppercase;">
-                <span>Last name</span>
-            </div>
-            <div class="input-box">
-                
-                <input type="email" name="email" id="email" required>
-                <span>Email Address</span>
-            </div>
-            <div class="input-box">
-                <input type="tel" name="phone" id="phone" required>
-                <span>Phone</span>
+            <div class="form-group-service">
+                <div class="input-box-service">
+                    <select name="service_id" id="service_id">
+                        <option value="" disabled selected>service type</option>
+                        {% for service in services %}
+                        <option value="{{ service.name }}">{{ service.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
             </div>
         </div>
-        <div class="form-group">
-            <h4 style="margin: 40px 0;">VEHICLE INFORMATION</h4>
-            <div class="input-box">
-                <input type="text" name="vehicle_make" id="vehicle_make" required style="text-transform: uppercase;">
-                <span>Vehicle make</span>
+        <div class="form-desc">
+            <div class="form-group-service">
+                <div class="input-box-description">
+                    <input type="text" name="description" id="description" placeholder="Describe the conditions of your vehicle">
+                </div>
             </div>
-            <div class="input-box">
-                <input type="text" name="vehicle_model" id="vehicle_model" required>
-                <span>Vehicle model</span>
-            </div>
-            <div class="input-box">
-                <input type="text" name="vehicle_year" id="vehicle_year" required>
-                <span>Vehicle year</span>
-            </div>
-            <div class="input-box">
-                <input type="text" name="license_plate" id="license_plate" required>
-                <span>License plate</span>
-            </div>
-            
         </div>
-        <div class="form-group">
-            <h4 style="margin: 40px 0;">SERVICE INFORMATION</h4>
-            <div class="input-box">
-                <input type="text" name="service_type" id="service_type" required style="text-transform: uppercase;">
-                <span>Service type</span>
+        <div class="form-desc">
+            <div class="form-group-service">
+                <div class="input-box-time">
+                    <label for="appointment_time">Appointment Time</label>
+                    <input type="datetime-local" name="appointment_time" id="appointment_time" required>
+                </div>
             </div>
-            <div class="input-box">
-                <input type="text" name="service_description" id="service_description" required>
-                <span>Description</span>
-            </div>
-            <div class="input-box">
-                <input type="text" name="service_date" id="service_date" required>
-                <span>Date and time</span>
-            </div>
-            <div class="input-box">
-                <input type="text" name="additional_note" id="additional_note" required>
-                <span>additional notes</span>
-            </div>
-            
         </div>
+        <button type="submit" class="form-submit">Schedule</button>
     </div>
-    <div class="form-submit"><a href="{{ url_for('routes.dashboard') }}">Request</a></div>
-
-</div>
+</form>
 {% endblock content %}

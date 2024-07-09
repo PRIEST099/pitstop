@@ -3,34 +3,22 @@
 <section class="vehicles">
     <h2 class="section-title">My Vehicles</h2>
     <div class="vehicle-grid">
-        <div class="vehicle-card">
+        {% for vehicle in vehicles %}
+        <div class="vehicle-card blur">
             <div class="vehicle-header">
-                <h3 class="vehicle-title">Toyota Camry</h3>
-                <span class="vehicle-year">2019</span>
+                <h3 class="vehicle-title">{{ vehicle.make }} {{ vehicle.model }}</h3>
+                <span class="vehicle-year">{{ vehicle.year }}</span>
             </div>
             <div class="vehicle-details">
-                <p><strong>License Plate:</strong> ABC-1234</p>
-                <p><strong>VIN:</strong> 1HGCM82633A123456</p>
+                <p><strong>License Plate:</strong> {{  vehicle.license_plate }}</p>
+                <p><strong>Type:</strong> {{ vehicle.type }}</p>
             </div>
             <div class="vehicle-actions">
                 <button class="action-btn">View Details</button>
-                <button class="action-btn">Service History</button>
+                <button class="action-btn">Needs maintenance</button>
             </div>
         </div>
-        <div class="vehicle-card">
-            <div class="vehicle-header">
-                <h3 class="vehicle-title">Honda Accord</h3>
-                <span class="vehicle-year">2018</span>
-            </div>
-            <div class="vehicle-details">
-                <p><strong>License Plate:</strong> XYZ-5678</p>
-                <p><strong>VIN:</strong> 2HGCM82633B654321</p>
-            </div>
-            <div class="vehicle-actions">
-                <button class="action-btn">View Details</button>
-                <button class="action-btn">Service History</button>
-            </div>
-        </div>
+        {% endfor %}
         <!-- More vehicle cards can be added here -->
     </div>
 </section>

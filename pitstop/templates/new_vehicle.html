@@ -29,17 +29,22 @@
                             <span>Vehicle Model</span>
                         </div>
                         <div class="input-box">
-                            <input type="text" name="license_plate" id="license_plate" required>
+                            <input type="text" name="license_plate" id="license_plate" required style="text-transform: uppercase;">
                             <span>License Plate</span>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-box">
-                            <input type="text" name="type" id="type" required style="text-transform: uppercase;">
-                            <span>Automatic/Manual/Hybrid</span>
+                            <select name="type" id="type" required>
+                                <option value="" disabled selected>Vehicle type</option>
+                                <option value="Automatic">Automatic</option>
+                                <option value="Manual">Manual</option>
+                                <option value="Hybrid">Hybrid</option>
+                            </select>
+                            <!-- <span>Automatic/Manual/Hybrid</span> -->
                         </div>
                         <div class="input-box">
-                            <input type="text" name="year" id="year" required>
+                            <input type="number" name="year" id="year" required oninput="this.value = this.value.slice(0,4)">
                             <span>Year</span>
                         </div>
                         <div class="input-box">

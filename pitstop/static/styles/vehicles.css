@@ -22,17 +22,17 @@
 }
 
 .vehicle-card {
-    background-color: #0044ff25;
+    background-color: rgba(29, 41, 67, 0.3);
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     position: relative;
     overflow: hidden;
 }
 
 .vehicle-card:hover {
     transform: translateY(-10px);
+    background-color: #0044ff25;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
@@ -46,11 +46,12 @@
 .vehicle-title {
     font-size: 24px;
     margin: 0;
-    color: #ff6600;
+    color: #006FFF;
+    text-transform: capitalize;
 }
 
 .vehicle-year {
-    background-color: #ff6600;
+    background-color: #006FFF;
     color: #fff;
     padding: 5px 10px;
     border-radius: 4px;
@@ -69,7 +70,7 @@
 }
 
 .action-btn {
-    background-color: #ff6600;
+    background-color: #006FFF;
     color: #fff;
     padding: 10px 15px;
     border: none;
@@ -79,6 +80,6 @@
 }
 
 .action-btn:hover {
-    background-color: #e05500;
+    background-color: #006FFF;
 }
 
