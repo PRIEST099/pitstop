@@ -8,7 +8,7 @@
             <div class="timeline-date">
                 <p>Today</p>
             </div>
-            <a href="{{ url_for('routes.service_request') }}" class="timeline-content-button">Schedule a new service</a>
+            <a href="{{ url_for('services.service_request') }}" class="timeline-content-button">Schedule a new service</a>
         </div>
         {% for order in bookings %}
         <div class="timeline-item">

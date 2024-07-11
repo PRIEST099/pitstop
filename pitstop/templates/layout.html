@@ -18,13 +18,13 @@
         <nav class="hero">
             <h3 class="logo">PIT<span class="logo-design">STOP</span></h3>
             <ul>
-                <li><a href="{{ url_for('routes.dashboard') }}">Dashboard</a></li>
-                <li><a href="{{ url_for('routes.vehicles') }}">My vehicles</a></li>
-                <li><a href="{{ url_for('routes.services') }}">My services</a></li>
+                <li><a href="{{ url_for('dashboard.dashboard_route') }}">Dashboard</a></li>
+                <li><a href="{{ url_for('vehicles.vehicle_list') }}">My vehicles</a></li>
+                <li><a href="{{ url_for('services.service_list') }}">My services</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Support</a></li>
             </ul>
-            <a href="{{ url_for('routes.logout') }}"><button class="nav-cto">Log out</button></a>
+            <a href="{{ url_for('auth.logout') }}"><button class="nav-cto">Log out</button></a>
                 
         </nav>
         <div class="flash-container">
@@ -73,7 +73,7 @@
             <div class="footer-section contact-form">
                 <h2>Contact us</h2>
                 <br>
-                <form action="index.html" method="post">
+                <form action="#" method="post">
                     <input type="email" name="email" class="text-input contact-input" placeholder="Your email address..." required>
                     <textarea name="message" class="text-input contact-input" placeholder="Your message..." required></textarea>
                     <button type="submit" class="form-submit">Send</button>

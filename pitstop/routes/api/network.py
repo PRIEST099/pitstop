@@ -1,6 +1,5 @@
-from flask import Blueprint, jsonify ,request, url_for
+from flask import Blueprint, jsonify ,request
 from pitstop.models.models import User
-from pitstop.extensions import db, bcrypt
 
 api = Blueprint('api', __name__)
 
