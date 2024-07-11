@@ -35,6 +35,5 @@ echo "Directory tree structure:"
 print_tree "." "" "├──"
 
 # Print the content of .py files
-echo "Contents of Python files:"
+echo "Contents of python files:"
 print_python_content
-
