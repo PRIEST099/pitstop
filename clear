@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Find all __pycache__ directories and remove them
+find . -type d -name "__pycache__" -exec rm -r {} +
+
+echo "All __pycache__ folders and their contents have been deleted."
+
