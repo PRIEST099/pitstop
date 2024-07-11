@@ -82,6 +82,10 @@
     -webkit-backdrop-filter: blur(3px);
 }
 
+.pending {
+    color: #852f13;
+}
+
 
 .services-form {
     padding: 20px;

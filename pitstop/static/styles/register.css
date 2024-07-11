@@ -188,6 +188,16 @@ select option {
     color: #006FFF;
 }
 
+.forgot {
+    display: flex;
+    margin: 0 auto;
+    width: fit-content;
+    color: #006FFF;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+}
+
 
 .form-submit {
     display: flex;
@@ -214,3 +224,43 @@ select option {
     height: 100%;
 }
 
+.flash-container {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 20px;
+    width: fit-content;
+    height: fit-content;
+    z-index: 1000;
+}
+.flash-message {
+    background-color: #006FFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: slideIn 1s forwards, slideOut 1s forwards 5s;
+}
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes slideOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}

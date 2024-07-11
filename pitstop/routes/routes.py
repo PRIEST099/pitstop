@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, jsonify, request, redirect, url_for
+from flask import Blueprint, render_template, jsonify, request, redirect, url_for, flash
 from flask_login import login_user, logout_user,login_required, current_user
 from pitstop.models.models import User, Vehicle, Service, Booking, Technician, TechnicianBooking, Admin
 from pitstop.extensions import bcrypt, db
@@ -9,18 +9,21 @@ routes = Blueprint('routes', __name__)
 @routes.route('/')
 def home_testing():
     if current_user.is_authenticated:
+        flash(f'You are already logged in as {current_user.username}')
         return redirect(url_for('routes.dashboard'))
     return render_template('home.html', title='Portfolio Project')
 
 @routes.route('/dashboard')
 def dashboard():
     if not current_user.is_authenticated:
-        return redirect(url_for('routes.home_testing'))    
+        flash('You must first log in to access the platform')
+        return redirect(url_for('routes.home_testing'))
     return render_template('dashboard.html', title="Portfolio project", user=current_user)
 
 @routes.route('/register', methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
+        flash(f'You are already logged in as {current_user.username}')
         return redirect(url_for('routes.dashboard'))
     if request.method == 'POST':
         first_name = request.form.get('first_name')
@@ -40,6 +43,7 @@ def register():
             )
         db.session.add(new_user)
         db.session.commit()
+        flash('You can now login to access your account')
         return redirect(url_for('routes.login'))
 
 
@@ -49,6 +53,7 @@ def register():
 @routes.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
+        flash(f'Already loggen in as {current_user.username}')
         return redirect(url_for('routes.dashboard'))
     if request.method == 'GET':
         email = request.args.get('email')
@@ -57,6 +62,7 @@ def login():
         user = User.query.filter_by(email=email).first()
         if user and bcrypt.check_password_hash(user.password, password):
             login_user(user, remember=True)
+            flash(f'Logged in as {current_user.username}!')
             return redirect(url_for('routes.dashboard'))
     return render_template('login.html', title="Portfolio project")
 
@@ -74,8 +80,6 @@ def service_request():
         service_id = Service.query.filter_by(name=service).first()
         vehicle_id = Vehicle.query.filter_by(make=vehicle_name).first()
         appointment_time = request.form.get('appointment_time')
-        print(vehicle_name)
-        print(vehicle_id, service_id)
         # Create a new booking with the provided data
         new_booking = Booking(
             user_id=current_user.id,
@@ -89,7 +93,7 @@ def service_request():
         # Add the new booking to the database session and commit it
         db.session.add(new_booking)
         db.session.commit()
-        
+        flash(f'{service} service scheduled')
         # Redirect to the dashboard after successful booking
         return redirect(url_for('routes.dashboard'))
     
@@ -120,6 +124,7 @@ def new_vehicle():
         db.session.add(vehicle)
         db.session.commit()
         print('done')
+        flash(f'{request.form.get("vehicle_brand")} {request.form.get("vehicle_model")} successfully added!')
         return redirect(url_for('routes.vehicles'))
     return render_template('new_vehicle.html', title="Portffolio project")
 
@@ -163,7 +168,76 @@ def services():
             'mechanic': 'Jane Smith'
         }
     ]
-    return render_template('services.html', services=services, title='Portfolio project')
+    date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    bookings = db.session.query(
+        Booking.id,
+        Booking.description,
+        Booking.appointment_time,
+        Booking.status,
+        Service.name.label('service_name')
+    ).join(Service, Booking.service_id == Service.id).filter(Booking.user_id == current_user.id).order_by(Booking.id.desc()).all()
+    
+    
+    return render_template('services.html', time=date, title='Portfolio project', bookings=bookings)
+
+
+
+@routes.route('/support')
+def support():
+    return render_template('support.html')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

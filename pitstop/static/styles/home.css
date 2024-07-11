@@ -20,6 +20,11 @@ body::before {
     z-index: -1;
 }
 
+.blue-bold {
+    color: #0080ff;
+    font-weight: bold;
+}
+
 .content {
     padding-left: 30px;
     padding-top: 10px;
@@ -126,6 +131,43 @@ a {
     text-decoration: none;
 }
 
+.flash-container {
+    display: flex;
+    margin: 0 auto;
+    width: fit-content;
+    z-index: 1000;
+}
+.flash-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: slideIn 0.5s forwards, slideOut 0.5s forwards 5s;
+}
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes slideOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
 
 @keyframes call-to-action {
     0% {

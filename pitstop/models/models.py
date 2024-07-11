@@ -1,6 +1,8 @@
 #!/usr/bin/pytho3
 from flask_login import UserMixin
 from pitstop.extensions import db, login_manager
+from pitstop.config import Config
+from itsdangerous.serializer import Serializer
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -23,6 +25,19 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(16), nullable=False)
     vehicle_info = db.relationship('Vehicle', backref='owner', lazy=True)
     booking = db.relationship('Booking', backref='user', lazy=True)
+
+    def get_reset_token(self, expires_sec=1800):
+        s = Serializer(Config.SECRET_KEY, expires_sec)
+        return s.dumps({'user_id': self.id}).decode('utf-8')
+    
+    @staticmethod
+    def verify_reset_token(token):
+        s = Serializer(Config.SECRET_KEY)
+        try:
+            user_id = s.loads(token)['user_id']
+        except:
+            return None
+        return User.query.get(user_id)
 
     def __repr__(self):
         return f"User('{self.username}', '{self.email}')"

@@ -25,24 +25,18 @@
         <form method="GET">
             <div class="form-content-auth">
                 <div class="form-cto">
-                    <p>Welcome back</p>
-                    <a href="{{ url_for('routes.register') }}">Sign up</a>
+                    <p>Reset your password</p>
+                    <a href="{{ url_for('routes.login') }}">Cancel</a>
                 </div>
                 <div class="form-register">
                     <div class="form-group">
                         <div class="input-box">
-                            <input type="email" name="email" id="email" required>
-                            <span>Email</span>
-                        </div>
-                        <div class="input-box">
-                            <input type="password" name="password" id="password" required>
-                            <span>Password</span>
+                            <input type="text" name="password" id="password" required>
+                            <span>Enter new pawssword</span>
                         </div>
                     </div>
-
                 </div>
-                <a href="#" class="forgot">Forgot password?</a>
-                <button type="submit" class="form-submit">Log in</button>
+                <button type="submit" class="form-submit">Reset Password</button>
             </div>
         </form>
         

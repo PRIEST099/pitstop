@@ -19,9 +19,18 @@
             <a href="{{ url_for('routes.login') }}"><button class="nav-cto">Log in</button></a>
                 
         </nav>
+        <div class="flash-container">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="flash-message">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
         <h1 class="heading-1">MECHANICS ON THE MOVE</h1>
         <h1 class="heading-2">FOR CARS THAT CANT</h1>
-        <p class="center-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lacus mauris, mollis feugiat nisl in, malesuada sollicitudin est. Suspendisse in lectus risus.</p>
+        <p class="center-text">At PITSTOP, we turn car troubles into smooth rides. Our expert mechanics come to <span class="blue-bold">YOU</span>, delivering top-tier service wherever your car rests. Say goodbye to downtime and hello to effortless auto care!</p>
         <a href="{{url_for('routes.register')}}"><button class="cto-content">GET STARTED</button></a>
         
     </div>

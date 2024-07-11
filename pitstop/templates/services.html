@@ -6,37 +6,21 @@
     <div class="service-timeline">
         <div class="timeline-item">
             <div class="timeline-date">
-                <p>July 8, 2024</p>
+                <p>Today</p>
             </div>
             <a href="{{ url_for('routes.service_request') }}" class="timeline-content-button">Schedule a new service</a>
         </div>
+        {% for order in bookings %}
         <div class="timeline-item">
-            <div class="timeline-date">
-                <p>May 20, 2024</p>
+            <div class="timeline-date {% if order.status != 'pending' %}pending{% endif %}">
+                <p>{{order.appointment_time}}</p>
             </div>
             <div class="timeline-content">
-                <h3>Brake Inspection</h3>
-                <p>Service completed by ABC Mechanics. No issues found.</p>
+                <h3>{{ order.service_name }}</h3>
+                <p>Service completed by {{order.description}}. issues fixed</p>
             </div>
         </div>
-        <div class="timeline-item">
-            <div class="timeline-date">
-                <p>April 15, 2024</p>
-            </div>
-            <div class="timeline-content">
-                <h3>Battery Check</h3>
-                <p>Service completed by DEF Auto Services. Battery in good condition.</p>
-            </div>
-        </div>
-        <div class="timeline-item">
-            <div class="timeline-date">
-                <p>March 10, 2024</p>
-            </div>
-            <div class="timeline-content">
-                <h3>Tire Rotation</h3>
-                <p>Service completed by GHI Tires. Recommended next rotation: June 2024.</p>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}
