@@ -101,6 +101,8 @@ class Technician(db.Model):
     name = db.Column(db.String(80), nullable=False)
     rating = db.Column(db.Float, nullable=True)
     status = db.Column(db.String(80), nullable=False)
+    latitude = db.Column(db.String(10), nullable=True)
+    longitude = db.Column(db.String(10), nullable=True)
     technician_bookings = db.relationship('TechnicianBooking', backref='technician', lazy=True)
 
 
@@ -125,3 +127,4 @@ class TechnicianBooking(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     technician_id = db.Column(db.Integer, db.ForeignKey('technician.id'), nullable=False)
     booking_id = db.Column(db.Integer, db.ForeignKey('booking.id'), nullable=False)
+    comment = db.Column(db.Text, nullable=True)

@@ -41,12 +41,24 @@ def login():
     if request.method == 'GET':
         email = request.args.get('email')
         password = request.args.get('password')
-
         user = User.query.filter_by(email=email).first()
-        if user and bcrypt.check_password_hash(user.password, password):
-            login_user(user, remember=True)
-            flash(f'Logged in as {current_user.username}!')
-            return redirect(url_for('dashboard.dashboard_route'))
+
+
+        if user is None and email is not None:
+            flash('No Account found for that Email! Consider Registering')
+            return redirect(url_for('auth.login'))
+        
+
+        if user:
+            if bcrypt.check_password_hash(user.password, password):
+                login_user(user, remember=True)
+                flash(f'Logged in as {current_user.username}!')
+                return redirect(url_for('dashboard.dashboard_route'))
+            else:
+                flash('incorect password')
+                return redirect(url_for('auth.login'))
+        
+        
     return render_template('login.html', title="Portfolio project")
 
 @auth.route('/logout')

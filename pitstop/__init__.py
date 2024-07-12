@@ -1,6 +1,6 @@
 from flask import Flask
 from pitstop.config import Config
-from pitstop.extensions import db, login_manager
+from pitstop.extensions import db, login_manager, mail
 
 def create_app():
     app = Flask(__name__)
@@ -9,6 +9,7 @@ def create_app():
 
     db.init_app(app)
     login_manager.init_app(app)
+    mail.init_app(app)
 
     with app.app_context():
         db.create_all()

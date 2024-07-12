@@ -73,8 +73,8 @@
             <div class="footer-section contact-form">
                 <h2>Contact us</h2>
                 <br>
-                <form action="#" method="post">
-                    <input type="email" name="email" class="text-input contact-input" placeholder="Your email address..." required>
+                <form action="{{ url_for('support.support_response')}}" method="post">
+                    <input type="text" name="subject" class="text-input contact-input" placeholder="Email subject" required>
                     <textarea name="message" class="text-input contact-input" placeholder="Your message..." required></textarea>
                     <button type="submit" class="form-submit">Send</button>
                 </form>

@@ -1,0 +1,31 @@
+
+
+.support-response {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background-color: black;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.link-regular {
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    padding: 10px 20px;
+    margin: 0 2px;
+    color: white;
+    transition: all .2s ease-in-out;
+}
+.link-regular:hover {
+    background-color: #0056b3;
+}

@@ -46,11 +46,12 @@ def display_database():
     vehicles = Vehicle.query.all()
     services = Service.query.all()
     bookings = Booking.query.all()
+    technicians = Technician.query.all()
     technician_bookings = TechnicianBooking.query.all()
-    
     return render_template('database.html', 
                            users=users, 
                            vehicles=vehicles, 
                            services=services, 
                            bookings=bookings, 
+                           technicians=technicians,
                            technician_bookings=technician_bookings)
