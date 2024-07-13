@@ -69,7 +69,7 @@
                     <th>Last Name</th>
                     <th>Username</th>
                     <th>Email</th>
-                    <th>Password</th>
+                    <th>Phone number</th>
                 </tr>
             </thead>
             <tbody>
@@ -80,7 +80,7 @@
                     <td>{{ user.last_name }}</td>
                     <td>{{ user.username }}</td>
                     <td>{{ user.email }}</td>
-                    <td>{{ user.password }}</td>
+                    <td>{{ user.phone }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
@@ -178,6 +178,8 @@
                     <th>Name</th>
                     <th>Rating</th>
                     <th>Status</th>
+                    <th>phone</th>
+                    <th>email</th>
                 </tr>
             </thead>
             <tbody>
@@ -187,6 +189,8 @@
                     <td>{{ technician.name }}</td>
                     <td>{{ technician.rating }}</td>
                     <td>{{ technician.status }}</td>
+                    <td>{{ technician.phone }}</td>
+                    <td>{{ technician.email }}</td>
                 </tr>
                 {% endfor %}
             </tbody>

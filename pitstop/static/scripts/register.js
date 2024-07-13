@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const confirmPassword = document.getElementById("confirm_password");
 
     // Function to check if user exists
-    function checkUser(usernameValue, emailValue) {
+    function checkUser(usernameValue, emailValue, phoneValue) {
         let url = `${BASE_URL}?username=${usernameValue}&email=${emailValue}`;
 
         return fetch(url)

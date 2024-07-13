@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, request, redirect, url_for, flash
 from flask_login import login_user, logout_user, login_required, current_user
 from pitstop.models.models import User
 from pitstop.extensions import bcrypt, db
-
+from pitstop.utils import format_phone_number
 auth = Blueprint('auth', __name__)
 
 @auth.route('/register', methods=['GET', 'POST'])
@@ -16,6 +16,7 @@ def register():
         username = request.form.get('username')
         email = request.form.get('email')
         password = request.form.get('password')
+        phone = request.form.get('phone_number')
 
         user_password = bcrypt.generate_password_hash(password).decode('utf-8')
 
@@ -24,6 +25,7 @@ def register():
             last_name=last_name,
             username=username,
             email=email,
+            phone=format_phone_number(phone),
             password=user_password
         )
         db.session.add(new_user)

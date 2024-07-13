@@ -83,7 +83,16 @@
 }
 
 .pending {
-    color: #852f13;
+    color: rgb(183, 255, 40);
+}
+
+.red {
+    color: rgb(255, 91, 36);
+    font-weight: bold;
+}
+
+.completed {
+    color: #006bff;
 }
 
 

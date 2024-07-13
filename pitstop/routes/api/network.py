@@ -8,11 +8,12 @@ api = Blueprint('api', __name__)
 def check_user():
     username = request.args.get('username')
     email = request.args.get('email')
+    phone = request.args.get('phone')
 
     if not username or not email:
         return jsonify({'error': 'Username and email are required.'}), 400
 
-    user = User.query.filter((User.username == username) | (User.email == email)).first()
+    user = User.query.filter((User.username == username) | (User.email == email) | (User.phone == phone)).first()
 
     if user:
         return jsonify({

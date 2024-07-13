@@ -188,6 +188,14 @@ select option {
     color: #006FFF;
 }
 
+.input-box-check {
+    position: relative;
+    margin-bottom: 20px;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+}
+
 .forgot {
     display: flex;
     margin: 0 auto;

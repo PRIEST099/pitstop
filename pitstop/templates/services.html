@@ -12,12 +12,12 @@
         </div>
         {% for order in bookings %}
         <div class="timeline-item">
-            <div class="timeline-date {% if order.status != 'pending' %}pending{% endif %}">
+            <div class="timeline-date {% if order.status != 'complete' %}pending{% else %}completed{% endif %}">
                 <p>{{order.appointment_time}}</p>
             </div>
             <div class="timeline-content">
-                <h3>{{ order.service_name }}</h3>
-                <p>Service completed by {{order.description}}. issues fixed</p>
+                <h3>{{ order.service_name }} - <small class="{% if order.status != 'complete' %}pending{% else %}completed{% endif %}">{{ order.status }}</small></h3>
+                <p>Served by <a class="red">{{order.technician_name}}</a>. {{ order.technician_comment }}</p>
             </div>
         </div>
         {% endfor %}

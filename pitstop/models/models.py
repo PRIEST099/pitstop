@@ -22,6 +22,7 @@ class User(db.Model, UserMixin):
     last_name = db.Column(db.String(25), nullable=False)
     username = db.Column(db.String(25), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
+    phone = db.Column(db.String(13), nullable=False)
     password = db.Column(db.String(16), nullable=False)
     vehicle_info = db.relationship('Vehicle', backref='owner', lazy=True)
     booking = db.relationship('Booking', backref='user', lazy=True)
@@ -99,8 +100,10 @@ class Technician(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80), nullable=False)
+    email = db.Column(db.String(100), unique=True, nullable=False)
     rating = db.Column(db.Float, nullable=True)
     status = db.Column(db.String(80), nullable=False)
+    phone = db.Column(db.String(13), nullable=False)
     latitude = db.Column(db.String(10), nullable=True)
     longitude = db.Column(db.String(10), nullable=True)
     technician_bookings = db.relationship('TechnicianBooking', backref='technician', lazy=True)

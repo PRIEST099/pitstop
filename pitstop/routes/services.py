@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
 from flask_login import current_user
-from pitstop.models.models import Service, Booking, Vehicle
+from pitstop.models.models import Service, Booking, Vehicle, TechnicianBooking, Technician
 from pitstop.extensions import db
 from datetime import datetime
 
@@ -9,13 +9,21 @@ services = Blueprint('services', __name__)
 @services.route('/services')
 def service_list():
     date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
     bookings = db.session.query(
         Booking.id,
-        Booking.description,
         Booking.appointment_time,
         Booking.status,
-        Service.name.label('service_name')
-    ).join(Service, Booking.service_id == Service.id).filter(Booking.user_id == current_user.id).order_by(Booking.id.desc()).all()
+        Service.name.label('service_name'),
+        Technician.name.label('technician_name'),
+        TechnicianBooking.comment.label('technician_comment')
+    ).join(Service, Booking.service_id == Service.id)\
+        .join(TechnicianBooking, TechnicianBooking.booking_id == Booking.id)\
+            .join(Technician, Technician.id == TechnicianBooking.technician_id)\
+                .filter(Booking.user_id == current_user.id)\
+                    .order_by(Booking.id.desc())\
+                        .all()
+
 
     return render_template('services.html', time=date, title='Portfolio project', bookings=bookings)
 
@@ -37,12 +45,28 @@ def service_request():
             description=description,
             vehicle_id=vehicle_id.id
         )
-
         # Add the new booking to the database session and commit it
         db.session.add(new_booking)
+        
+        '''
+            THE BELOW CODE IS JUST FOR TESTING AND THE REAL IMPLEMENTATION OF FINDING
+            THE REAL TECHNICIAN WILL BE IMPLEMENTED IN THE NEAR FUTURE - STAY TUNED
+        '''
+        tech = Technician.query.first()
+        
+        assign_tech = TechnicianBooking(
+            technician_id=tech.id,
+            booking_id=new_booking.id,
+            comment='working on it!'
+        )
+        # Add the new tech to the database session and commit it
+        db.session.add(assign_tech)
+        '''
+            THE ABOVE CODE IS JUST FOR TESTING AND THE REAL IMPLEMENTATION OF FINDING
+            THE REAL TECHNICIAN WILL BE IMPLEMENTED IN THE NEAR FUTURE - STAY TUNED
+        '''
         db.session.commit()
         flash(f'{service} service scheduled')
-        # Redirect to the dashboard after successful booking
         return redirect(url_for('dashboard.dashboard_route'))
 
     # Query the user's vehicles and all available services
