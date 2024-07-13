@@ -83,3 +83,8 @@
     background-color: #006FFF;
 }
 
+.delete {
+    background-color: red;
+    color: white;
+}
+

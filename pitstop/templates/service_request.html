@@ -10,9 +10,14 @@
             <div class="form-group-service">
                 <div class="input-box-service">
                     <select name="vehicle_id" id="vehicle_id">
-                        <option value="" disabled selected>select your vehicle</option>
+                        {% if spec_vehicle %}
+                            <option value="" disabled>Select a vehicle</option>
+                            <option value="{{ spec_vehicle }}" selected>{{ spec_vehicle }}</option>
+                        {% else %}
+                            <option value="" disabled selected>Select a vehicle</option>
+                        {% endif %}
                         {% for vehicle in vehicles %}
-                        <option value="{{ vehicle.make }}">{{ vehicle.make }} </option>
+                            <option value="{{ vehicle.make }}">{{ vehicle.make }} </option>
                         {% endfor %}
                     </select>
                 </div>
@@ -20,10 +25,17 @@
             <div class="form-group-service">
                 <div class="input-box-service">
                     <select name="service_id" id="service_id">
-                        <option value="" disabled selected>service type</option>
+                        {% if spec_service %}
+                            <option value="" disabled>service type</option>
+                            <option value="{{ spec_service }}" selected>{{ spec_service }}</option>
+                        {% else %}
+                            <option value="" disabled selected>service type</option>
+                            
+                        {% endif %}
                         {% for service in services %}
-                        <option value="{{ service.name }}">{{ service.name }}</option>
+                            <option value="{{ service.name }}">{{ service.name }}</option>
                         {% endfor %}
+                        
                     </select>
                 </div>
             </div>

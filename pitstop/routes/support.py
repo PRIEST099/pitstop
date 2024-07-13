@@ -3,6 +3,7 @@ from flask_mail import Message
 from flask_login import current_user
 from pitstop.extensions import mail
 from pitstop.config import Config
+from pitstop.utils import send_sms
 
 support = Blueprint('support', __name__)
 
@@ -25,6 +26,11 @@ def support_response():
         
         try:
             mail.send(msg)
+            try:
+                send_sms('+250 725 443 055', 'someone just send an enquiry to the pitstop app')
+                print('\n\n\n\n\n\n\nmessage sent to sms')
+            except Exception as e:
+                print(f'\n\n\n\n\n\n\nmessage not sent: {e}')
         except Exception as e:
             flash('Failed to send message. Please try again later.', 'danger')
             return redirect(url_for('dashboard.dashboard_route'))

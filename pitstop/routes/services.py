@@ -49,5 +49,18 @@ def service_request():
     user_vehicles = Vehicle.query.filter_by(user_id=current_user.id).all()
     services = Service.query.all()
 
+    # Try to pass service from dashboard
+    spec_service = request.args.get('service')
+    print(f'Spec value: {spec_service}')
+
+    #requesting a vehicle maintenance from vehicles route
+    spec_vehicle = request.args.get('vehicle') 
+
     # Render the service request template with user vehicles and services
-    return render_template('service_request.html', title='Request a New Service', user=current_user, vehicles=user_vehicles, services=services)
+    return render_template('service_request.html',
+                           title='Request a New Service',
+                           user=current_user,
+                           vehicles=user_vehicles,
+                           services=services,
+                           spec_service=spec_service,
+                           spec_vehicle=spec_vehicle)

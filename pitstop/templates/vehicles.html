@@ -14,8 +14,8 @@
                 <p><strong>Type:</strong> {{ vehicle.type }}</p>
             </div>
             <div class="vehicle-actions">
-                <button class="action-btn">View Details</button>
-                <button class="action-btn">Needs maintenance</button>
+                <a class="action-btn delete" href="#">Delete</a>
+                <a class="action-btn" href="{{ url_for('services.service_request', vehicle=vehicle.make) }}">Needs maintenance</a>
             </div>
         </div>
         {% endfor %}
