@@ -2,7 +2,7 @@
 from flask_login import UserMixin
 from pitstop.extensions import db, login_manager
 from pitstop.config import Config
-from itsdangerous.serializer import Serializer
+from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 
 @login_manager.user_loader
 def load_user(user_id):

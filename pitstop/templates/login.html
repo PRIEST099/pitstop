@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/register.css') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sas:ital, wght@0,100;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:wght@700;800;900&display=swap">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <script src="{{ url_for('static', filename='scripts/login.js') }}"></script>
     <title>{{title}}</title>
 </head>
@@ -38,10 +39,14 @@
                             <input type="password" name="password" id="password" required>
                             <span>Password</span>
                         </div>
+                        <div class="input-box-check">
+                            <input type="checkbox" name="remember" id="remember">
+                            <span>Remember me</span>
+                        </div>
                     </div>
 
                 </div>
-                <a href="#" class="forgot">Forgot password?</a>
+                <a href="{{ url_for('auth.reset_request') }}" class="forgot">Forgot password?</a>
                 <button type="submit" class="form-submit">Log in</button>
             </div>
         </form>
