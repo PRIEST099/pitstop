@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, request, redirect, url_for, flash
 from flask_login import current_user
 from pitstop.models.models import Service, Booking, Vehicle, TechnicianBooking, Technician
 from pitstop.extensions import db
+from pitstop.utils import send_custom_email
 from datetime import datetime
 
 services = Blueprint('services', __name__)
@@ -66,6 +67,25 @@ def service_request():
             THE REAL TECHNICIAN WILL BE IMPLEMENTED IN THE NEAR FUTURE - STAY TUNED
         '''
         db.session.commit()
+        message = f'''Greetings Admin,
+A user {current_user.first_name} {current_user.last_name} has requested a service
+for his vehicle {vehicle_id.make} {vehicle_id.model} and expects his service to be done by the date: {appointment_time}.
+
+service: {service}
+service description: {description}
+
+contact information:
+    Email: {current_user.email}
+    Phone number: {current_user.phone}
+
+Check your dashboard for more information about this.
+Have a nice day!
+'''
+        send_custom_email(
+            subject='New Scheduled service',
+            recipient=['ahadic044@gmail.com'], # this is to be changed later when we have admins to our platform
+            message=message
+        )
         flash(f'{service} service scheduled')
         return redirect(url_for('dashboard.dashboard_route'))
 

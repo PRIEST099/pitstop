@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, request, redirect, url_for, flash
 from flask_login import login_user, logout_user,  current_user
 from pitstop.models.models import User
 from pitstop.extensions import bcrypt, db
-from pitstop.utils import format_phone_number, send_reset_email
+from pitstop.utils import format_phone_number, send_custom_email
 
 
 auth = Blueprint('auth', __name__)
@@ -81,7 +81,18 @@ def reset_request():
         email = request.form.get('email')
         user = User.query.filter_by(email=email).first()
         if user is not None:
-            send_reset_email(user)
+            token  = user.get_reset_token()
+            message = f'''Hello {user.first_name},
+To reset your password, follow the folowing link:
+{url_for('auth.reset_password', token=token, _external=True)}
+
+If you did not make this request, simply ignore this email and no changes will be made.
+'''
+            send_custom_email(
+                subject='Password Reset Request',
+                recipient=[user.email],
+                message=message
+            )
             flash('An Email has been sent with instructions to reset your password.')
             return redirect(url_for('auth.login'))
         else:
@@ -92,7 +103,7 @@ def reset_request():
 @auth.route('/reset_password/<token>', methods=['GET', 'POST'])
 def reset_password(token):
     user = User.verify_reset_token(token)
-    
+
     if request.method == 'POST':
         password = request.form.get('password')
         confirm_password = request.form.get('confirm_password')
