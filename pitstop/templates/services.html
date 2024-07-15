@@ -10,7 +10,7 @@
             </div>
             <a href="{{ url_for('services.service_request') }}" class="timeline-content-button">Schedule a new service</a>
         </div>
-        {% for order in bookings %}
+        {% for order in bookings.items %}
         <div class="timeline-item">
             <div class="timeline-date {% if order.status != 'complete' %}pending{% else %}completed{% endif %}">
                 <p>{{order.appointment_time}}</p>
@@ -21,6 +21,21 @@
             </div>
         </div>
         {% endfor %}
+        <div class="pagination-link">
+            {% for page_num in bookings.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=1) %}
+                {% if page_num %}
+                    {% if bookings.page == page_num %}
+                        <a class="current-page"  href="{{ url_for('services.service_list', page=page_num) }}">{{ page_num }}</a>
+                    {% else %}
+                        <a  href="{{ url_for('services.service_list', page=page_num) }}">{{ page_num }}</a>
+                    {% endif %}
+                    
+                {% else %}
+                    ...
+                {% endif %}
+            {% endfor %}
+        </div>
+        
     </div>
 </div>
 {% endblock %}

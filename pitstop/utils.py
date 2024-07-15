@@ -1,5 +1,5 @@
 from twilio.rest import Client
-from flask import current_app, url_for
+from flask import current_app, url_for, redirect, flash
 from pitstop.extensions import mail
 from flask_mail import Message
 import phonenumbers
@@ -47,5 +47,4 @@ def send_custom_email(subject, recipient, message):
         recipients=recipient,
         body=message
     )
-
     mail.send(msg)

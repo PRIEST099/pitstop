@@ -208,3 +208,34 @@
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
 }
+
+.pagination-link {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.pagination-link a {
+    font-weight: bold;
+    border: 1px solid #006bff;
+    color: white;
+    text-decoration-color: white;
+    border-radius: 5px;
+    padding: 4px 7px;
+    transition: all 0.2s ease-in-out;
+}
+
+
+.pagination-link a:hover {
+    background-color: #006bff;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.current-page {
+    background-color: #006bff;
+    color: white;
+}

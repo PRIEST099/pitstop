@@ -4,12 +4,12 @@
     <div class="form-content-service">
         <div class="service-form-cto">
             <p>Schedule a new service</p>
-            <a href="{{ url_for('auth.login') }}">cancel</a>
+            <a href="{{ url_for('dashboard.dashboard_route') }}">cancel</a>
         </div>
         <div class="form-service">
             <div class="form-group-service">
                 <div class="input-box-service">
-                    <select name="vehicle_id" id="vehicle_id">
+                    <select name="vehicle_id" id="vehicle_id" required>
                         {% if spec_vehicle %}
                             <option value="" disabled>Select a vehicle</option>
                             <option value="{{ spec_vehicle }}" selected>{{ spec_vehicle }}</option>
@@ -24,7 +24,7 @@
             </div>
             <div class="form-group-service">
                 <div class="input-box-service">
-                    <select name="service_id" id="service_id">
+                    <select name="service_id" id="service_id" required>
                         {% if spec_service %}
                             <option value="" disabled>service type</option>
                             <option value="{{ spec_service }}" selected>{{ spec_service }}</option>
@@ -43,7 +43,7 @@
         <div class="form-desc">
             <div class="form-group-service">
                 <div class="input-box-description">
-                    <input type="text" name="description" id="description" placeholder="Describe the conditions of your vehicle">
+                    <input type="text" name="description" id="description" placeholder="Describe the conditions of your vehicle" required>
                 </div>
             </div>
         </div>

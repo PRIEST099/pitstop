@@ -10,6 +10,7 @@ services = Blueprint('services', __name__)
 @services.route('/services')
 def service_list():
     date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    page = request.args.get('page', 1, type=int)
 
     bookings = db.session.query(
         Booking.id,
@@ -23,7 +24,7 @@ def service_list():
             .join(Technician, Technician.id == TechnicianBooking.technician_id)\
                 .filter(Booking.user_id == current_user.id)\
                     .order_by(Booking.id.desc())\
-                        .all()
+                        .paginate(page=page, per_page=5)
 
 
     return render_template('services.html', time=date, title='Portfolio project', bookings=bookings)
@@ -81,12 +82,17 @@ contact information:
 Check your dashboard for more information about this.
 Have a nice day!
 '''
-        send_custom_email(
+        try:
+            send_custom_email(
             subject='New Scheduled service',
             recipient=['ahadic044@gmail.com'], # this is to be changed later when we have admins to our platform
             message=message
-        )
-        flash(f'{service} service scheduled')
+            )
+            flash(f'{service} service scheduled')
+        except Exception as e:
+            flash('An error occured. Please try again!')
+            return redirect(url_for('services.service_request'))
+       
         return redirect(url_for('dashboard.dashboard_route'))
 
     # Query the user's vehicles and all available services
