@@ -4,6 +4,7 @@ from pitstop.models.models import Service, Booking, Vehicle, TechnicianBooking, 
 from pitstop.extensions import db
 from pitstop.utils import send_custom_email
 from datetime import datetime
+import uuid
 
 services = Blueprint('services', __name__)
 
@@ -40,6 +41,7 @@ def service_request():
         appointment_time = request.form.get('appointment_time')
         # Create a new booking with the provided data
         new_booking = Booking(
+            id=uuid.uuid4().hex,
             user_id=current_user.id,
             service_id=service_id.id,
             appointment_time=datetime.fromisoformat(appointment_time),
@@ -57,6 +59,7 @@ def service_request():
         tech = Technician.query.first()
         
         assign_tech = TechnicianBooking(
+            id=uuid.uuid4().hex,
             technician_id=tech.id,
             booking_id=new_booking.id,
             comment='working on it!'

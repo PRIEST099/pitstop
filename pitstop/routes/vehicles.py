@@ -2,6 +2,8 @@ from flask import Blueprint, render_template, request, redirect, url_for, flash
 from flask_login import current_user
 from pitstop.models.models import Vehicle, Booking
 from pitstop.extensions import db
+from pitstop.config import Config
+import uuid
 
 vehicles = Blueprint('vehicles', __name__)
 
@@ -21,6 +23,7 @@ def new_vehicle():
             flash('That car is already managed by another user!')
         else:
             vehicle = Vehicle(
+                id=uuid.uuid4().hex,
                 user_id=current_user.id,
                 make=request.form.get('vehicle_brand'),
                 model=request.form.get('vehicle_model'),
@@ -37,17 +40,14 @@ def new_vehicle():
     return render_template('new_vehicle.html', title="Portfolio project")
 
 
-# @vehicles.route('/vehicles/<plate>/delete', methods=['GET'])
-# def delete_vehicle(plate):
-#     vehicle = Vehicle.query.filter_by(license_plate=plate).first()
-
-#     if vehicle:
-#         bookings = Booking.query.filter_by(id=vehicle.id).all()
-#         for order in bookings:
-#             db.session.delete(order)
-#         db.session.delete(vehicle)
-#         db.session.commit()
-#         return redirect(url_for('vehicles.vehicle_list'))
-#     else:
-#         flash('unable to perform action! Plaese try again later')
-#         return redirect(url_for('vehicles.vehicle_list'))
+@vehicles.route('/vehicle/<string:vehicle_id>', methods=['GET'])
+def delete_vehicle(vehicle_id):
+    vehicle = Vehicle.query.get_or_404(vehicle_id)
+    booking = Booking.query.filter_by(vehicle_id=vehicle.id).all()
+    for order in booking:
+        order.vehicle_id = 'null'
+        order.status = 'vehicle deleted'
+        order.technician_bookings.comment = 'repair cancelled'
+    db.session.delete(vehicle)
+    db.session.commit()
+    return redirect(url_for('vehicles.vehicle_list'))

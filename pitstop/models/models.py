@@ -6,7 +6,7 @@ from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 
 @login_manager.user_loader
 def load_user(user_id):
-    return User.query.get(int(user_id))
+    return User.query.get(user_id)
 
 '''
 database models used in this project
@@ -17,7 +17,7 @@ class User(db.Model, UserMixin):
         Each can have multiple vehivles ad bookings
     '''
 
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.String(32), primary_key=True)
     first_name = db.Column(db.String(25), nullable=False)
     last_name = db.Column(db.String(25), nullable=False)
     username = db.Column(db.String(25), unique=True, nullable=False)
@@ -52,8 +52,8 @@ class Vehicle(db.Model):
         Each vehicle has a 'user_id' as a foreign key to 'User' table
     '''
 
-    id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    id = db.Column(db.String(32), primary_key=True)
+    user_id = db.Column(db.String(32), db.ForeignKey('user.id'), nullable=False)
     make = db.Column(db.String(80), nullable=False)
     model = db.Column(db.String(80), nullable=False)
     year = db.Column(db.String(4), nullable=False)
@@ -68,7 +68,7 @@ class Service(db.Model):
         Each service can have multiple bookinngs
     '''
 
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.String(32), primary_key=True)
     name = db.Column(db.String(80), nullable=False)
     description = db.Column(db.Text, nullable=True)
     price = db.Column(db.Float, nullable=False)
@@ -81,10 +81,10 @@ class Booking(db.Model):
         It includes foreign keys to both user and service tables and vehicles table
     '''
 
-    id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    service_id = db.Column(db.Integer, db.ForeignKey('service.id'), nullable=False)
-    vehicle_id = db.Column(db.Integer, db.ForeignKey('vehicle.id'), nullable=False)
+    id = db.Column(db.String(32), primary_key=True)
+    user_id = db.Column(db.String(32), db.ForeignKey('user.id'), nullable=False)
+    service_id = db.Column(db.String(32), db.ForeignKey('service.id'), nullable=False)
+    vehicle_id = db.Column(db.String(32), db.ForeignKey('vehicle.id'), nullable=True)
     description = db.Column(db.Text, nullable=True)
     appointment_time = db.Column(db.DateTime, nullable=False)
     status = db.Column(db.String(80), nullable=False)
@@ -98,7 +98,7 @@ class Technician(db.Model):
         Represents Technicians who are assigned to bookings
     '''
 
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.String(32), primary_key=True)
     name = db.Column(db.String(80), nullable=False)
     email = db.Column(db.String(100), unique=True, nullable=False)
     rating = db.Column(db.Float, nullable=True)
@@ -115,7 +115,7 @@ class Admin(db.Model):
         Represents admin user with access to administratice privileges
     '''
 
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.String(32), primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
     password = db.Column(db.String(120), nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
@@ -127,7 +127,7 @@ class TechnicianBooking(db.Model):
         Represents the relationship between technicians and bookings,
         allowing for the assignment of technicians to specific boookings
     '''
-    id = db.Column(db.Integer, primary_key=True)
-    technician_id = db.Column(db.Integer, db.ForeignKey('technician.id'), nullable=False)
-    booking_id = db.Column(db.Integer, db.ForeignKey('booking.id'), nullable=False)
+    id = db.Column(db.String(32), primary_key=True)
+    technician_id = db.Column(db.String(32), db.ForeignKey('technician.id'), nullable=False)
+    booking_id = db.Column(db.String(32), db.ForeignKey('booking.id'), nullable=False)
     comment = db.Column(db.Text, nullable=True)

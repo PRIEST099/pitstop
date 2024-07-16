@@ -3,6 +3,7 @@ from flask_login import login_user, logout_user,  current_user
 from pitstop.models.models import User
 from pitstop.extensions import bcrypt, db
 from pitstop.utils import format_phone_number, send_custom_email
+import uuid
 
 
 auth = Blueprint('auth', __name__)
@@ -23,6 +24,7 @@ def register():
         user_password = bcrypt.generate_password_hash(password).decode('utf-8')
 
         new_user = User(
+            id=uuid.uuid4().hex,
             first_name=first_name,
             last_name=last_name,
             username=username,

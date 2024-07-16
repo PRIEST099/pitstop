@@ -1,5 +1,6 @@
 from pitstop import db, create_app
 from pitstop.models.models import Service
+import uuid
 
 # List of sample services to be added
 services = [
@@ -20,7 +21,10 @@ app = create_app()
 # Ensure database session is open
 with app.app_context():
     for service_name in services:
-        service = Service(name=service_name, price=300.00)
+        service = Service(
+            id=uuid.uuid4().hex,
+            name=service_name,
+            price=300.00)
         db.session.add(service)
 
     # Commit the session
