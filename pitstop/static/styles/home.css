@@ -7,6 +7,7 @@ body {
     background-attachment: fixed;
     position: relative;
     min-height: 100vh;
+    color: #ffffff;
 }
 
 body::before {
@@ -184,4 +185,134 @@ a {
     }
 }
 
+/* About Section */
+.about-section {
+    background-color: rgba(0, 85, 255, 0.064);
+    padding: 0px 20px;
+    border-radius: 8px;
+    color: white;
+}
 
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+.about-container h2 {
+    font-size: 2.5rem;
+    padding-top: 20px;
+    color: white;
+    text-align: center;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.story, .links, .repository {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.story h3, .links h3, .repository h3 {
+    font-size: 1.8rem;
+    color: #006FFF;
+}
+
+.story p, .repository p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+a {
+    color: #006FFF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #006FFF;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 5px 0;
+}
+
+.repository a {
+    font-weight: bold;
+}
+
+.links ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+.links ul li {
+    margin: 0 10px;
+}
+
+.links ul li a {
+    display: block;
+    padding: 10px;
+    border: 2px solid #006FFF;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.links ul li a:hover {
+    background-color: #006FFF;
+    color: #ffffff;
+}
+
+/* Features Section */
+.features-section {
+    padding: 40px 20px;
+    border-radius: 8px;
+    margin-top: 40px;
+}
+
+.features-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.features-container h2 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+}
+
+.feature {
+    margin-top: 20px;
+}
+
+.feature img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.feature h3 {
+    font-size: 1.8rem;
+    color: #006FFF;
+    margin-top: 10px;
+}
+
+.feature p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-top: 10px;
+}

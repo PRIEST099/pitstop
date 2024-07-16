@@ -13,6 +13,15 @@
         <nav class="hero">
             <h3 class="logo-auth">PIT<span class="logo-design">STOP</span></h3>
         </nav>
+        <div class="flash-container">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="flash-message">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
         <form method="POST">
             <div class="form-content-auth">
                 <div class="form-cto">

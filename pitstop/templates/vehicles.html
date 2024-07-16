@@ -14,7 +14,7 @@
                 <p><strong>Type:</strong> {{ vehicle.type }}</p>
             </div>
             <div class="vehicle-actions">
-                <a class="action-btn delete" href="#">Delete</a>
+                <a class="action-btn delete" href="{{ url_for('vehicles.delete_vehicle', plate=vehicle.license_plate) }}">Delete</a>
                 <a class="action-btn" href="{{ url_for('services.service_request', vehicle=vehicle.make) }}">Needs maintenance</a>
             </div>
         </div>

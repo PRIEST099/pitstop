@@ -1,0 +1,98 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+header {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.title {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.about {
+    padding: 20px 0;
+}
+
+.story, .links, .repository {
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #2980b9;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+a {
+    color: #e74c3c;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #c0392b;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 5px 0;
+}
+
+.repository a {
+    font-weight: bold;
+}
+
+.story::before {
+    content: url('https://via.placeholder.com/80');
+    float: left;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+.links ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+.links ul li {
+    margin: 0 10px;
+}
+
+.links ul li a {
+    display: block;
+    padding: 10px;
+    border: 2px solid #e74c3c;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.links ul li a:hover {
+    background-color: #e74c3c;
+    color: #ffffff;
+}

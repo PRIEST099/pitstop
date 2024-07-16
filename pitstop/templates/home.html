@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/home.css') }}">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sas:ital, wght@0,100;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:wght@700;800;900&display=swap">
-    <title>{{title}}</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap">
+    <title>{{ title }}</title>
 </head>
+
 <body>
     <div class="content">
         <nav class="hero">
             <h3 class="logo">PIT<span class="logo-design">STOP</span></h3>
             <ul>
-                <li>Home</li>
-                <li>About</li>
-                <li>Support</li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
             </ul>
             <a href="{{ url_for('auth.login') }}"><button class="nav-cto">Log in</button></a>
-                
         </nav>
         <div class="flash-container">
             {% with messages = get_flashed_messages() %}
@@ -30,10 +29,62 @@
             {% endwith %}
         </div>
         <h1 class="heading-1">MECHANICS ON THE MOVE</h1>
-        <h1 class="heading-2">FOR CARS THAT CANT</h1>
+        <h1 class="heading-2">FOR CARS THAT CAN'T</h1>
         <p class="center-text">At PITSTOP, we turn car troubles into smooth rides. Our expert mechanics come to <span class="blue-bold">YOU</span>, delivering top-tier service wherever your car rests. Say goodbye to downtime and hello to effortless auto care!</p>
-        <a href="{{url_for('auth.register')}}"><button class="cto-content">GET STARTED</button></a>
-        
+        <a href="{{ url_for('auth.register') }}"><button class="cto-content">GET STARTED</button></a>
+
+
+
+
+        <!-- Features Section -->
+        <section id="features" class="features-section">
+            <div class="features-container">
+                <h3>Key Features</h3>
+                <div class="feature">
+                    <img src="{{ url_for('static', filename='images/feature_1.jpg') }}" alt="Feature 1">
+                    <p>Effortlessly schedule maintenance and repairs with our user-friendly interface.</p>
+                </div>
+                <div class="feature">
+                    <img src="{{ url_for('static', filename='images/feature_1.jpg') }}" alt="Feature 1">
+                    <p>Track your vehicle’s service history and get reminders for upcoming services.</p>
+                </div>
+                <div class="feature">
+                    <img src="{{ url_for('static', filename='images/feature_1.jpg') }}" alt="Feature 1">
+                    <p>Get real-time updates on your service status from our expert mechanics.</p>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="about-container">
+                <h2>About PitStop</h2>
+                <div class="about-content">
+                    <div class="story">
+                        <h3>My Journey</h3>
+                        <p>PitStop was born from the realization that many car owners face recurring issues with vehicle maintenance but struggle to keep track of services and schedules. Seeing a gap in the market for a comprehensive, user-friendly platform, I was inspired to create PitStop. This platform is designed to efficiently manage all vehicle-related services, offering a holistic approach to tracking maintenance histories, scheduling appointments, and providing essential car care tips. As the sole creator, I am dedicated to making car maintenance hassle-free and invite you to join me on this journey towards smarter, simpler car care.</p>
+                        <p>This project is also my Portfolio Project for <a href="https://holbertonschool.com" target="_blank">Holberton School</a>, showcasing my skills in web development and design.</p>
+                    </div>
+                    <div class="links">
+                        <h3>Connect with Me</h3>
+                        <ul>
+                            <li><a href="https://www.linkedin.com/in/pr1est/" target="_blank">LinkedIn</a></li>
+                            <li><a href="https://github.com/PRIEST099" target="_blank">GitHub</a></li>
+                            <li><a href="https://twitter.com/a_had_i_" target="_blank">Twitter</a></li>
+                        </ul>
+                    </div>
+                    <div class="repository">
+                        <h3>Project Repository</h3>
+                        <p>Check out the code and contribute to the project on <a href="https://github.com/PRIEST099/pitstop" target="_blank">GitHub</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       
     </div>
 </body>
+
 </html>

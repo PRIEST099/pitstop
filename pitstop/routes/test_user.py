@@ -55,3 +55,7 @@ def display_database():
                            bookings=bookings, 
                            technicians=technicians,
                            technician_bookings=technician_bookings)
+
+@test.route('/about')
+def about():
+    return render_template('about.html', title='About Pitstop')
