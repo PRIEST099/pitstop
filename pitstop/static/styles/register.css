@@ -77,18 +77,28 @@ body::before {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    text-align: center;
     padding: 0 50px;
 }
 
-.form-cto  p {
+.form-cto p {
     font-size: 25px;
     font-weight: normal;
+    margin: 0; /* Remove any default margin */
+    line-height: 1; /* Adjust line-height to ensure alignment */
+    display: flex;
+    align-items: center; /* Align items within the p element */
 }
 
 .form-cto a {
     color: #006FFF;
     text-decoration: none;
+    font-size: 16px; /* Smaller font size for the link */
+    margin: 0; /* Remove any default margin */
+    align-self: center; /* Align self to the center of the flex container */
 }
+
+
 
 .form-content {
     color: white;

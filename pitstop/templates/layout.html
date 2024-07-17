@@ -21,7 +21,7 @@
                 <li><a href="{{ url_for('dashboard.dashboard_route') }}">Dashboard</a></li>
                 <li><a href="{{ url_for('vehicles.vehicle_list') }}">My vehicles</a></li>
                 <li><a href="{{ url_for('services.service_list') }}">My services</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="{{ url_for('test.about') }}">About</a></li>
                 <li><a href="#">Support</a></li>
             </ul>
             <a href="{{ url_for('auth.logout') }}"><button class="nav-cto">Log out</button></a>

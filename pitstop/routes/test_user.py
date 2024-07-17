@@ -39,6 +39,22 @@ def get_vehicles():
         vehicles_list.append(vehicle_data)
     return jsonify(vehicles_list)
 
+@test.route('/database', methods=['GET'])
+def display_database():
+    # Fetch all entries from different tables
+    users = User.query.all()
+    vehicles = Vehicle.query.all()
+    services = Service.query.all()
+    bookings = Booking.query.all()
+    technicians = Technician.query.all()
+    technician_bookings = TechnicianBooking.query.all()
+    return render_template('database.html', 
+                           users=users, 
+                           vehicles=vehicles, 
+                           services=services, 
+                           bookings=bookings, 
+                           technicians=technicians,
+                           technician_bookings=technician_bookings)
 
 @test.route('/about')
 def about():
