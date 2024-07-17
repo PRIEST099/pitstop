@@ -1,23 +1,30 @@
-from twilio.rest import Client
-from flask import current_app, url_for, redirect, flash
 from pitstop.extensions import mail
 from flask_mail import Message
 import phonenumbers
 from phonenumbers import PhoneNumberFormat, parse, PhoneNumberType
+import vonage
+from pitstop.config import Config
 
-def send_sms(to, message):
-    account_sid = current_app.config['TWILIO_ACCOUNT_SID']
-    auth_token = current_app.config['TWILIO_AUTH_TOKEN']
-    twilio_phone_number = current_app.config['TWILIO_PHONE_NUMBER']
+def send_sms(text):
+    client = vonage.Client(key=Config.VONAGE_KEY, secret=Config.VONAGE_SECRET)
 
-    client = Client(account_sid, auth_token)
+    sms = vonage.Sms(client)
 
-    message = client.messages.create(
-        body=message,
-        from_=twilio_phone_number,
-        to=to
-    )
-    return message.sid
+    try:
+        responseData = sms.send_message(
+            {
+            "from": "Vonage APIs",
+            "to": "250789108997",
+            "text": text,
+            }
+            )
+
+        if responseData["messages"][0]["status"] == "0":
+            print("Message sent successfully.")
+        else:
+            print(f"Message failed with error: {responseData['messages'][0]['error-text']}")
+    except Exception as e:
+        print(f'error: {e}')
 
 def format_phone_number(phone_number):
     try:

@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, request, redirect, url_for, flash
 from flask_login import current_user
 from pitstop.models.models import Service, Booking, Vehicle, TechnicianBooking, Technician
 from pitstop.extensions import db
-from pitstop.utils import send_custom_email
+from pitstop.utils import send_custom_email, send_sms
 from datetime import datetime
 import uuid
 
@@ -95,6 +95,23 @@ Have a nice day!
         except Exception as e:
             flash('An error occured. Please try again!')
             return redirect(url_for('services.service_request'))
+        
+        text_messsage = f'''Greetings Admin,
+A user {current_user.first_name} {current_user.last_name} has requested a service
+for his vehicle {vehicle_id.make} {vehicle_id.model} and expects his service to be done by the date: {appointment_time}.
+
+service: {service}
+service description: {description}
+
+contact information:
+    Email: {current_user.email}
+    Phone number: {current_user.phone}
+
+Check your dashboard for more information about this.
+Have a nice day!
+'''
+
+        send_sms(text_messsage)
        
         return redirect(url_for('dashboard.dashboard_route'))
 
