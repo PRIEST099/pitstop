@@ -6,6 +6,12 @@ import vonage
 from pitstop.config import Config
 
 def send_sms(text):
+    """
+    Sends an SMS using the Vonage API.
+    Args:
+        text (str): The message to be sent.
+    """
+
     client = vonage.Client(key=Config.VONAGE_KEY, secret=Config.VONAGE_SECRET)
 
     sms = vonage.Sms(client)
@@ -13,8 +19,8 @@ def send_sms(text):
     try:
         responseData = sms.send_message(
             {
-            "from": "Vonage APIs",
-            "to": "250789108997",
+            "from": "PITSTOP",
+            "to": Config.VONAGE_PHONE_NUMBER,
             "text": text,
             }
             )
@@ -27,6 +33,14 @@ def send_sms(text):
         print(f'error: {e}')
 
 def format_phone_number(phone_number):
+    """
+    Formats a phone number to the international format for Rwanda.
+    Args:
+        phone_number (str): The phone number to format.
+    Returns:
+        str: The formatted phone number or an error message.
+    """
+
     try:
         # Parse the phone number
         parsed_number = parse(phone_number, "RW")
@@ -47,10 +61,17 @@ def format_phone_number(phone_number):
 
 
 def send_custom_email(subject, recipient, message):
+    """
+    Sends a custom email using Flask-Mail.
+    Args:
+        subject (str): The subject of the email.
+        recipient (list): List of email recipients.
+        message (str): The email message body.
+    """
     
     msg = Message(
         subject,
-        sender='noreply@pitstop.rw',
+        sender=Config.NONEXISTENT_EMAIL, # 🔐 again this email does not exist but for privacy i have made it private
         recipients=recipient,
         body=message
     )

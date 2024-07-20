@@ -7,6 +7,7 @@ import uuid
 
 app = create_app()
 
+# another testing technique to add a technician to the database
 with app.app_context():
     t1 = Technician(id=uuid.uuid4().hex,
                     name="ABC garage ltd",

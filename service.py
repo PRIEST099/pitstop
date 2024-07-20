@@ -2,7 +2,8 @@ from pitstop import db, create_app
 from pitstop.models.models import Service
 import uuid
 
-# List of sample services to be added
+# 📒 ist of sample services to be added just for testing the app
+# im sure this will change in the near future
 services = [
     'Oil Change', 'Tire Rotation', 'Brake Inspection', 'Transmission Repair', 'Battery Replacement',
     'Engine Diagnostics', 'Air Filter Replacement', 'AC Service', 'Alignment Check', 'Coolant Flush',

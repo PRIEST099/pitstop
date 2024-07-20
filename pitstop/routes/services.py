@@ -4,12 +4,25 @@ from pitstop.models.models import Service, Booking, Vehicle, TechnicianBooking, 
 from pitstop.extensions import db
 from pitstop.utils import send_custom_email, send_sms
 from datetime import datetime
+from pitstop.config import Config
 import uuid
 
 services = Blueprint('services', __name__)
 
 @services.route('/services')
 def service_list():
+    """
+    Displays a list of services booked by the current user.
+    - Fetches bookings for the current user.
+    - Joins related Service, TechnicianBooking, and Technician data.
+    - Paginates the results to show 5 bookings per page.
+    - Renders the 'services.html' template with the bookings.
+    """
+
+    if not current_user.is_authenticated:
+        flash('You must first log in to access that page')
+        return redirect(url_for('home.home_testing'))
+    
     date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     page = request.args.get('page', 1, type=int)
 
@@ -32,6 +45,17 @@ def service_list():
 
 @services.route('/services/new', methods=['GET', 'POST'])
 def service_request():
+    """
+    Handles the service request form.
+    - On GET: Displays the form to request a new service.
+    - On POST: Processes the form submission, creates a new booking, and assigns a technician.
+    - Sends an email and SMS notification to the admin.
+    """
+
+    if not current_user.is_authenticated:
+        flash('You must first log in to access that page')
+        return redirect(url_for('home.home_testing'))
+    
     if request.method == 'POST':
         vehicle_name = request.form.get('vehicle_id')
         service = request.form.get('service_id')
@@ -84,11 +108,13 @@ contact information:
 
 Check your dashboard for more information about this.
 Have a nice day!
+
+
 '''
         try:
             send_custom_email(
             subject='New Scheduled service',
-            recipient=['ahadic044@gmail.com'], # this is to be changed later when we have admins to our platform
+            recipient=[Config.MAIL_USERNAME], # 🔐|📒 This is to be changed later when we have admins to our platform
             message=message
             )
             flash(f'{service} service scheduled')
@@ -96,22 +122,8 @@ Have a nice day!
             flash('An error occured. Please try again!')
             return redirect(url_for('services.service_request'))
         
-        text_messsage = f'''Greetings Admin,
-A user {current_user.first_name} {current_user.last_name} has requested a service
-for his vehicle {vehicle_id.make} {vehicle_id.model} and expects his service to be done by the date: {appointment_time}.
-
-service: {service}
-service description: {description}
-
-contact information:
-    Email: {current_user.email}
-    Phone number: {current_user.phone}
-
-Check your dashboard for more information about this.
-Have a nice day!
-'''
-
-        send_sms(text_messsage)
+        # This function handles the errors, that's why it is not sorrounded with a try/except block
+        send_sms(message)
        
         return redirect(url_for('dashboard.dashboard_route'))
 

@@ -1,84 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/layout.css') }}">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/about.css') }}">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
-    <title>About Us - PITSTOP</title>
-</head>
-<body>
-    <div class="content">
-        <nav class="hero">
-            <h3 class="logo">PIT<span class="logo-design">STOP</span></h3>
-            <ul>
-                <li><a href="{{ url_for('routes.dashboard') }}">Dashboard</a></li>
-                <li><a href="{{ url_for('routes.vehicles') }}">My vehicles</a></li>
-                <li><a href="{{ url_for('routes.services') }}">My services</a></li>
-                <li><a href="{{ url_for('routes.support') }}" class="active">About</a></li>
-                <li><a href="{{ url_for('routes.support') }}">Support</a></li>
-            </ul>
-            <a href="{{ url_for('routes.logout') }}"><button class="nav-cto">Log out</button></a>
-        </nav>
+{% extends 'layout.html' %}
+{% block content %}
+<div class="about-section">
+    <div class="about-content">
+        <h1>Welcome to PITSTOP</h1>
+        <p>We are your dedicated partner in vehicle maintenance, providing high-quality services and exceptional customer support. Our mission is to ensure your vehicle runs smoothly and safely.</p>
+        <p>At PITSTOP, we offer a wide range of services tailored to meet your needs. Whether it's routine maintenance or major repairs, our expert team is here to help.</p>
+        <p>Explore our services, manage your vehicles, and stay connected with our community. Join us in keeping your vehicle in top shape!</p>
     </div>
-
-    <div class="about-section">
-        <div class="about-content">
-            <h1>Welcome to PITSTOP</h1>
-            <p>We are your dedicated partner in vehicle maintenance, providing high-quality services and exceptional customer support. Our mission is to ensure your vehicle runs smoothly and safely.</p>
-            <p>At PITSTOP, we offer a wide range of services tailored to meet your needs. Whether it's routine maintenance or major repairs, our expert team is here to help.</p>
-            <p>Explore our services, manage your vehicles, and stay connected with our community. Join us in keeping your vehicle in top shape!</p>
-        </div>
-        <div class="about-image">
-            <img src="{{ url_for('static', filename='images/about.jpg') }}" alt="About Us Image">
-        </div>
+    <div class="about-image">
+        <img src="{{ url_for('static', filename='images/about.jpg') }}" alt="About Us Image">
     </div>
-
-    <footer class="site-footer">
-        <div class="footer-content">
-            <div class="footer-section about">
-                <h2>PIT<span class="logo-design">STOP</span></h2>
-                <p>Your one-stop solution for all vehicle maintenance needs. Stay on top of your vehicle's health with PITSTOP.</p>
-                <div class="contact">
-                    <span><i class="fas fa-phone"></i> &nbsp; +123-456-789</span>
-                    <span><i class="fas fa-envelope"></i> &nbsp; support@pitstop.com</span>
-                </div>
-                <div class="socials">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-
-            <div class="footer-section links">
-                <h2>Quick Links</h2>
-                <br>
-                <ul>
-                    <li><a href="#">Events</a></li>
-                    <li><a href="#">Team</a></li>
-                    <li><a href="#">Mentors</a></li>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="#">Terms and Conditions</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-section contact-form">
-                <h2>Contact us</h2>
-                <br>
-                <form action="index.html" method="post">
-                    <input type="email" name="email" class="text-input contact-input" placeholder="Your email address..." required>
-                    <textarea name="message" class="text-input contact-input" placeholder="Your message..." required></textarea>
-                    <button type="submit" class="form-submit">Send</button>
-                </form>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            &copy; pitstop.com | Designed by Pitstop Team
-        </div>
-    </footer>
-
-</body>
-</html>
+</div>
+{% endblock content %}

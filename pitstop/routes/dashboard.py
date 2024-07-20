@@ -5,6 +5,13 @@ dashboard = Blueprint('dashboard', __name__)
 
 @dashboard.route('/dashboard')
 def dashboard_route():
+    """
+    Handles the display of the dashboard page.
+    - Checks if the user is authenticated.
+    - If the user is not authenticated, redirects to the home page with a flash message.
+    - If the user is authenticated, renders the dashboard page.
+    """
+    
     if not current_user.is_authenticated:
         flash('You must first log in to access the platform')
         return redirect(url_for('home.home_testing'))

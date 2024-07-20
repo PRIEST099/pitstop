@@ -9,10 +9,20 @@ support = Blueprint('support', __name__)
 
 @support.route('/support')
 def support_route():
+    """
+    Renders the support page.
+    - Displays the support page template.
+    """
+
     return render_template('support.html')
 
 @support.route('/support_response', methods=['GET', 'POST'])
 def support_response():
+    """
+    Handles the support response process.
+    - GET request: displays the support response form.
+    - POST request: processes the form data and sends an email and SMS notification to the admin.
+    """
 
     if request.method == 'POST':
         subject = request.form.get('subject')
@@ -20,14 +30,14 @@ def support_response():
 
         msg = Message(
             f'Pitsop user {current_user.username} has contacted you - regarding {subject}',
-            sender='client@pitsop.com', # this email does not exist
-            recipients=[Config.TEST_EMAIL], # I decided to make this email private in case some of you might want to mess with my inbox
+            sender='client@nonexistent.email', # ⚠️ This email does not exist
+            recipients=[Config.TEST_EMAIL], # 🔐 I decided to make this email private in case some of you might want to mess with my inbox
             body=content)
         
         try:
             mail.send(msg)
             try:
-                send_sms('+250 725 443 055', 'someone just send an enquiry to the pitstop app')
+                send_sms(Config.PHONE_NUMBER, 'someone just send an enquiry to the pitstop app') # 🔐 And again i have made my phone number private  due to obvious reasons
                 print('\n\n\n\n\n\n\nmessage sent to sms')
             except Exception as e:
                 print(f'\n\n\n\n\n\n\nmessage not sent: {e}')
