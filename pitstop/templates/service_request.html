@@ -24,19 +24,16 @@
             </div>
             <div class="form-group-service">
                 <div class="input-box-service">
-                    <select name="service_id" id="service_id" required>
-                        {% if spec_service %}
-                            <option value="" disabled>service type</option>
-                            <option value="{{ spec_service }}" selected>{{ spec_service }}</option>
-                        {% else %}
-                            <option value="" disabled selected>service type</option>
-                            
-                        {% endif %}
+
+                    <input list="services" name="service_id" id="service_id" required
+                        value="{{ spec_service if spec_service else '' }}"
+                        placeholder="service type">
+                    <datalist id="services">
                         {% for service in services %}
                             <option value="{{ service.name }}">{{ service.name }}</option>
                         {% endfor %}
-                        
-                    </select>
+                    </datalist>
+
                 </div>
             </div>
         </div>

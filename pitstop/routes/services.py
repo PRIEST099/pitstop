@@ -60,14 +60,32 @@ def service_request():
         vehicle_name = request.form.get('vehicle_id')
         service = request.form.get('service_id')
         description = request.form.get('description')
-        service_id = Service.query.filter_by(name=service).first()
-        vehicle_id = Vehicle.query.filter_by(make=vehicle_name).first()
         appointment_time = request.form.get('appointment_time')
+
+        # Check if service exists in the database
+        service_type = Service.query.filter_by(name=service).first()
+        if not service_type:
+            service_type = Service(
+                id=uuid.uuid4().hex,
+                name=service,
+                price=300.00
+            )
+            db.session.add(service_type)
+            db.session.commit()
+
+
+
+        # Check if the vehicle exists in the database
+        vehicle_id = Vehicle.query.filter_by(make=vehicle_name).first()
+        if not vehicle_id:
+            flash('Selected vehicle does not exist.')
+            return redirect(url_for('services.service_request'))
+        
         # Create a new booking with the provided data
         new_booking = Booking(
             id=uuid.uuid4().hex,
             user_id=current_user.id,
-            service_id=service_id.id,
+            service_id=service_type.id,
             appointment_time=datetime.fromisoformat(appointment_time),
             status='Pending',
             description=description,
@@ -111,19 +129,19 @@ Have a nice day!
 
 
 '''
-        try:
-            send_custom_email(
-            subject='New Scheduled service',
-            recipient=[Config.MAIL_USERNAME], # 🔐|📒 This is to be changed later when we have admins to our platform
-            message=message
-            )
-            flash(f'{service} service scheduled')
-        except Exception as e:
-            flash('An error occured. Please try again!')
-            return redirect(url_for('services.service_request'))
+        # try:
+        #     send_custom_email(
+        #     subject='New Scheduled service',
+        #     recipient=[Config.MAIL_USERNAME], # 🔐|📒 This is to be changed later when we have admins to our platform
+        #     message=message
+        #     )
+        #     flash(f'{service} service scheduled')
+        # except Exception as e:
+        #     flash('An error occured. Please try again!')
+        #     return redirect(url_for('services.service_request'))
         
-        # This function handles the errors, that's why it is not sorrounded with a try/except block
-        send_sms(message)
+        # # This function handles the errors, that's why it is not sorrounded with a try/except block
+        # send_sms(message)
        
         return redirect(url_for('dashboard.dashboard_route'))
 
