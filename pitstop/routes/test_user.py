@@ -1,5 +1,6 @@
-from flask import Blueprint, render_template, jsonify
+from flask import Blueprint, render_template, abort
 from pitstop.models.models import User, Vehicle, Service, Booking, Technician, TechnicianBooking, Admin
+from pitstop.config import Config
 #============= TEST API ==============#
 
 
@@ -7,9 +8,13 @@ test = Blueprint('test', __name__)
 
 
 
-# This route is only uncommented in the development but we would not want sensitive information like this to be exposed to the internet ofcourse😂
-@test.route('/database', methods=['GET'])
-def display_database():
+# This route is only for the admin with admin key now.
+@test.route('/database/<key>', methods=['GET'])
+def display_database(key):
+
+    if not key or key != Config.ADMIN_KEY:
+        abort(404)
+    
     # Fetch all entries from different tables
     users = User.query.all()
     vehicles = Vehicle.query.all()
