@@ -129,19 +129,19 @@ Have a nice day!
 
 
 '''
-        # try:
-        #     send_custom_email(
-        #     subject='New Scheduled service',
-        #     recipient=[Config.MAIL_USERNAME], # 🔐|📒 This is to be changed later when we have admins to our platform
-        #     message=message
-        #     )
-        #     flash(f'{service} service scheduled')
-        # except Exception as e:
-        #     flash('An error occured. Please try again!')
-        #     return redirect(url_for('services.service_request'))
+        try:
+            send_custom_email(
+            subject='New Scheduled service',
+            recipient=[Config.MAIL_USERNAME], # 🔐|📒 This is to be changed later when we have admins to our platform
+            message=message
+            )
+            flash(f'{service} service scheduled')
+        except Exception as e:
+            flash('An error occured. Please try again!')
+            return redirect(url_for('services.service_request'))
         
-        # # This function handles the errors, that's why it is not sorrounded with a try/except block
-        # send_sms(message)
+        # This function handles the errors, that's why it is not sorrounded with a try/except block
+        send_sms(message)
        
         return redirect(url_for('dashboard.dashboard_route'))
 
